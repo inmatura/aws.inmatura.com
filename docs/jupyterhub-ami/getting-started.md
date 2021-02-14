@@ -29,6 +29,6 @@ password will be the EC2 instance ID, for example `i-0b3445939c749244c`
 ![KeyCloak login](/assets/img/jupyterhub-ami/keycloak-login.png)
 
 You will now be redirected to JupyterHub and you Jupyter session will start,
-you will now see the JupyterLab UI.
+you will now see the Jupyter Lab UI.
 
 ![KeyCloak login](/assets/img/jupyterhub-ami/jlab.png)

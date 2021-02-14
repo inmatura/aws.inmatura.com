@@ -6,12 +6,6 @@ MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
 PWD := $(shell pwd)
-PYTEST_K ?= ""
-TEST_MARKERS ?= "not selenium"
-
-SELENIUM_HUB_HOST ?= 127.0.0.1
-SELENIUM_HUB_PORT ?= 4444
-PYTEST_BASE_URL ?= http://host.docker.internal:8866
 
 
 first: help
