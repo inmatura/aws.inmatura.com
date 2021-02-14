@@ -1,0 +1,27 @@
+name: docs.extrapolations.dev
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pip
+
+  - pip:
+      # Base Python deps
+      - setuptools
+      - setuptools-scm
+      - pylint
+      - flake8
+      - black
+      - isort
+      - twine
+      - wheel
+      - pytest
+      - pytest-cov
+
+      # Docs
+      - mkdocs
+      - mkdocs-material
+      - mkdocs-jupyter>=0.15.0
+      - mkdocs-minify-plugin
+      - pygments
+      - pymdown-extensions
