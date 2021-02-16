@@ -10,9 +10,14 @@ nav:
     - IDEs: jupyterhub-ami/ides.md
     - User management: jupyterhub-ami/users.md
     - Packages: jupyterhub-ami/packages.md
-    - Managemeent: jupyterhub-ami/management.md
+    - Management: jupyterhub-ami/management.md
     - SSL: jupyterhub-ami/ssl.md
     - Stoping: jupyterhub-ami/stop.md
+  - GPT-2:
+    - Overview: models/gpt-2/index.md
+    - Getting Started: models/gpt-2/getting-started.md
+    - API Usage: models/gpt-2/usage.md
+    - Examples: models/gpt-2/examples.md
 
 theme:
   name: material
@@ -35,6 +40,8 @@ markdown_extensions:
   - meta
   - admonition
   - codehilite
+  - pymdownx.tabbed
+  - pymdownx.superfences
   - toc:
       permalink: true
 

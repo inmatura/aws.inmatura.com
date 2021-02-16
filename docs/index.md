@@ -8,3 +8,4 @@ Here you will find documentation for the various products offered throught the
 | Product | Offering |
 |---|---|
 | [JupyterHub AMI](/jupyterhub-ami) | [Launch on EC2](https://aws.amazon.com/marketplace/pp/Daniel-Rodriguez-JupyterHub-multi-user-single-node/B07YSYZ2P6) |
+| [GPT-2](/models/gpt-2) | [Launch on SageMaker](https://aws.amazon.com/marketplace/pp/Daniel-Rodriguez-GPT-2-XL-Text-generation/prodview-cdujckyfypprg) |

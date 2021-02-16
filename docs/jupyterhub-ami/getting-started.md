@@ -1,4 +1,4 @@
-# Getting started
+# Getting started with the JupyterHub AMI
 
 To deploy the JuptyerHub AMI on AWS:
 
@@ -17,7 +17,8 @@ Now go to the [EC2 Dashboard](https://console.aws.amazon.com/ec2) and locate the
 
 Copy the public IP address and open it in a browser, be sure to use `http` and not `https`.
 
-Note: The services might take a minute to start the first time while it's configuring the services and creating the initial user.
+Note: The services might take a couple of minutes to start the first time
+while it's configuring the services and creating the first user.
 
 You should now see the JupyterHub UI and can click on `Sign in with KeyCloak`
 
