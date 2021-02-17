@@ -17,3 +17,10 @@ Features:
 
 See how to [launch this algorithm in AWS SageMaker](/models/gpt-2/getting-started)
 and [examples](/models/gpt-2/examples)
+
+
+## Costs
+
+You have selected a real-time inference configuration. You will incur costs for software use based on hourly pricing as long as your endpoint is running.
+
+Infrastructure costs are independent and in addition to the costs of software.
