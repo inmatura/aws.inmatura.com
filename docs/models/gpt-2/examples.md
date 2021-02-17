@@ -50,12 +50,6 @@
     >
     > Update, 8:20 p.m. PT: TMZ reports that Cyrus was unaware
 
-    Params:
-    ```
-    "max_length": 200
-    "seed": 1
-    ```
-
 
 
 === "LOTR"

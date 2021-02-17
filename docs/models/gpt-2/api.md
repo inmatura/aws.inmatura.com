@@ -16,7 +16,7 @@ For example:
     "num_beams": 5,
     "no_repeat_ngram_size": 2,
     "num_return_sequences": 3,
-    "seed": 0
+    "seed": -1
 }
 ```
 
