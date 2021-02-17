@@ -26,7 +26,7 @@ listing on the AWS Marketplace
     1. Under `Attach endpoint configuration` select `Create a new endpoint configuration`
     1. Be sure the named model (e.g. `gpt-2`) is listed under `Production variants`
 
-        Here you can select the instance types you want for the endpoint. The minimun required is `ml.m5.2xlarge`
+        Here you can select the instance types you want for the endpoint. The minimun required is `ml.m5.4xlarge`
 
     1. Click on `Create endpoint configuration`
     1. Finally click on `Submit`
