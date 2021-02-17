@@ -1,11 +1,36 @@
-# Using GPT-2
+# GPT-2 API
 
-The prediction endpoint is a POST endpoint that receives a JSON object on the body.
+The inference endpoint is a POST endpoint that receives a JSON object on the body.
+
+The JSON object is a one level object with the different inputs of the model.
+For example:
+
+```
+{
+    "input": "This is an input text",
+    "max_length": 50,
+    "mode": "sample-top-p",
+    "top_p": 0.92,
+    "top_k": 50,
+    "temperature": 0.7,
+    "num_beams": 5,
+    "no_repeat_ngram_size": 2,
+    "num_return_sequences": 3,
+    "seed": 0
+}
+```
+
+The response of the model is a list of generated sequences.
+
+```
+[
+  "This is an input text file which is created from a file.\n\nThis is the input text file which will be converted to a PDF and used as the source text.\n\nThis is the text file that is used to convert the PDF to",
+  "This is an input text field.\n\nYou can customize this field through the following parameters:",
+  "This is an input text box which has a lot of options. You will be able to change the size of the text and change the font and line height.\n\nYou can also add or remove the \"back\" button. If you select a"
+]
+```
 
 ## Parameters
-
-There are different parameters fields you can add in that JSON object that allows for diferent text generation
-for the different modes of text generation.
 
 | Param | Value | Default |
 |---|---|---|
@@ -22,39 +47,7 @@ for the different modes of text generation.
 
 The `input`, `max_length` and `num_return_sequences` parameters can be used in all modes.
 
-## Response
-
-The response of the model is a list of generated sequences.
-
-## Python example
-
-This is a minimal example using Python and the boto library.
-
-```python
-import boto3
-client = boto3.client('sagemaker-runtime')
-endpoint_name = "gpt-2-demo"
-content_type = "application/json"
-payload = '{"input": "This is an input text"}'
-
-response = client.invoke_endpoint(
-    EndpointName=endpoint_name,
-    ContentType=content_type,
-    Body=payload
-    )
-
-print(response["Body"].read())
-```
-
-```
-[
-  "This is an input text file which is created from a file.\n\nThis is the input text file which will be converted to a PDF and used as the source text.\n\nThis is the text file that is used to convert the PDF to",
-  "This is an input text field.\n\nYou can customize this field through the following parameters:",
-  "This is an input text box which has a lot of options. You will be able to change the size of the text and change the font and line height.\n\nYou can also add or remove the \"back\" button. If you select a"
-]
-```
-
-## Mode: sample-top-p
+## Mode: `sample-top-p`
 
 This is the default mode to generate text.
 It works as a nice default for a variety of inputs.
@@ -66,7 +59,7 @@ These parameters can be used on this mode:
 | `top_p` | `0.92` |
 | `top_p` | `50` |
 
-## Mode: sample-top-k
+## Mode: `sample-top-k`
 
 These parameters can be used on this mode:
 
@@ -74,7 +67,7 @@ These parameters can be used on this mode:
 |---|---|
 | `top_k` | `50` |
 
-## Mode: sample
+## Mode: `sample`
 
 This mode works as a general version of `sample-top-p` and `sample-top-k`.
 
@@ -86,7 +79,7 @@ These parameters can be used on this mode:
 | `top_k` | `50` |
 | `temperature` | `0.7` |
 
-## Mode: beam
+## Mode: `beam`
 
 These parameters can be used on this mode:
 
@@ -95,6 +88,6 @@ These parameters can be used on this mode:
 | `num_beams` | `5` |
 | `no_repeat_ngram_size` | `2` |
 
-## Mode: Greedy
+## Mode: `greedy`
 
 There are no arguments on this mode.

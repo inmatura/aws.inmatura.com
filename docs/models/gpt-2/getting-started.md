@@ -1,6 +1,5 @@
 # Getting started with GPT-2
 
-
 ## Launching the model on Sage Maker
 
 1. Log in to AWS with a user with administrative privileges
@@ -34,8 +33,74 @@ listing on the AWS Marketplace
 
 A new endpoint will be created (this can take a couple of minutes).
 
+![SageMaker GPT-2 endpoint](/assets/img/models/gpt-2/sagemaker-endpoint.png)
+
 ## Making a query
 
-- https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html
-- https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html
-- https://docs.aws.amazon.com/general/latest/gr/sigv4-signed-request-examples.html
+With the endpoint ready you will have an URL to make predictions, for example:
+```
+https://runtime.sagemaker.us-east-1.amazonaws.com/endpoints/gpt-2/invocations
+```
+
+For documentation on how to query it see the [InvokeEndpoint documentation in AWS](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html).
+
+The key part being how to handlee the
+[AWS Signature Version 4](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html),
+for example [using Python](https://docs.aws.amazon.com/general/latest/gr/sigv4-signed-request-examples.html).
+
+### Insonmia
+
+To test the endpoint you can use the [Insonmia HTTP client](https://insomnia.rest)
+that supports AWS Authentication.
+
+Just select the Auth method `AWS IAM v4` and fill the credentials, region and use
+`sagemaker` as the service.
+
+![Insonmia Auth](/assets/img/models/insonmia-aws-auth.png)
+
+Select `JSON` as the body type and use the following test query:
+
+```
+{
+    "input": "This is an input text",
+    "seed": 0
+}
+```
+
+The result should be:
+
+```
+[
+  "This is an input text string that has a single character.\n\nExample: This is the label of the message.\n\nA message is the textual content of a message. For example, a message consists of a message-id, a subject",
+  "This is an input text file.\n\nAn example input file would look like:\n\nInputFile. write! (\"foo.txt\", \"Hello world!\");\n\nYou can read and write the contents of a file using File#read",
+  "This is an input textbox for a user entered text.\n\n[ { \" text \" : \" Hello World \" }, { \" text \" : \" Goodbye World \" }, { \" text \" : \" Hello Again \" }, { \" text \" :"
+]
+```
+
+### boto
+
+You can also use the Python `boto3` library to make a query.
+
+```python
+import boto3
+
+client = boto3.client('sagemaker-runtime')
+endpoint_name = "gpt-2"
+
+content_type = "application/json"
+payload = '{"input": "This is an input text"}'
+
+response = client.invoke_endpoint(
+    EndpointName=endpoint_name,
+    ContentType=content_type,
+    Body=payload
+)
+
+response["Body"].read()
+```
+
+### API docs
+
+For a complete documentation of the API with it's different modes and parameters
+see [API](/models/gpt-2/api).
+

@@ -17,3 +17,11 @@ Features:
 - No per RAM or CPU pricing, just a fee for the AMI and use any EC2 instance type including GPUs
 - Based on Ubuntu 20.04
 - Free trial
+
+## Pricing
+
+This model has a fee of `0.15` dollars per hour.
+You will incur costs for software use **only** for as long as your EC2 instancee is running.
+
+Infrastructure costs are independent and in addition to the costs of software
+and it depends on the instance type selectd.

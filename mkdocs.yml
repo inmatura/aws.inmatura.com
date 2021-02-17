@@ -12,12 +12,13 @@ nav:
     - Packages: jupyterhub-ami/packages.md
     - Management: jupyterhub-ami/management.md
     - SSL: jupyterhub-ami/ssl.md
-    - Stoping: jupyterhub-ami/stop.md
+    - Terminating: jupyterhub-ami/terminate.md
   - GPT-2:
     - Overview: models/gpt-2/index.md
     - Getting Started: models/gpt-2/getting-started.md
-    - API Usage: models/gpt-2/usage.md
+    - API: models/gpt-2/api.md
     - Examples: models/gpt-2/examples.md
+    - Terminating: models/gpt-2/terminate.md
 
 theme:
   name: material

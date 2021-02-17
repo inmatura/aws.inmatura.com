@@ -1,9 +1,9 @@
 # Stoping your instance
 
-You can stop the instance anytime you are not using it to save EC2 cost.
+You can stop the instance anytime you are not using it to save money.
 You won't be charged any fees while the instance is not running.
 
-## Terminate your subscription
+## Terminating your subscription
 
 You can terminate your subscription by simply terminating the EC2 instance.
 You will no longer be charged by EC2 usage or the AMI fee until you start it again.
