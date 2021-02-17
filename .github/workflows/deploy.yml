@@ -1,0 +1,61 @@
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request_target:
+  workflow_dispatch:
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: [3.8]
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: git fetch --prune --unshallow
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Python dependencies
+        run: |
+          which python
+          which pip
+          python --version
+          pip --version
+          pip install -U -r requirements.txt
+          pip freeze
+
+      - name: Build docs
+        run: |
+          make build
+
+      - name: Push docs (branch)
+        uses: jsmrcaga/action-netlify-deploy@master
+        if: github.event_name == 'pull_request_target'
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          build_directory: site
+
+      - name: Push docs (main)
+        uses: jsmrcaga/action-netlify-deploy@master
+        if: (github.event_name == 'push') && endsWith(github.ref, '/main')
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_DEPLOY_TO_PROD: true
+          build_directory: site
+
+      - name: Upload docs
+        uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: docs
+          path: site
