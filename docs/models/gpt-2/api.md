@@ -2,8 +2,7 @@
 
 The inference endpoint is a POST endpoint that receives a JSON object on the body.
 
-The JSON object is a one level object with the different inputs of the model.
-For example:
+Input of the endpoint is a JSON object that includes the input to the model and the different modes and parameters.
 
 ```
 {

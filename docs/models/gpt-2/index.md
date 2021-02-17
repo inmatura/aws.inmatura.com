@@ -7,7 +7,7 @@ After launching this model you will get an endpoint to easily generate text base
 Features:
 
 - The largest available GPT-2 model with 1.5 billion parameters
-- State of the art results on text generation
+- State of the art results in text generation
 - Easy parameters that allows for easy exploration of the results
 - Same low price independent of the resources used (`memory/cpu/gpu`)
 
