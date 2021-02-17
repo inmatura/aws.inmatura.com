@@ -33,8 +33,6 @@ extra_javascript:
 
 plugins:
   - search
-  - mkdocs-jupyter:
-      execute: true
 
 markdown_extensions:
   - meta
