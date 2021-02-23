@@ -19,6 +19,12 @@ nav:
     - API: models/gpt-2/api.md
     - Examples: models/gpt-2/examples.md
     - Terminating: models/gpt-2/terminate.md
+  - EfficientNet-B3:
+    - Overview: models/efficientnet-b3/index.md
+    - Getting Started: models/efficientnet-b3/getting-started.md
+    - API: models/efficientnet-b3/api.md
+    - Examples: models/efficientnet-b3/examples.md
+    - Terminating: models/efficientnet-b3/terminate.md
 
 theme:
   name: material

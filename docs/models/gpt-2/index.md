@@ -19,5 +19,5 @@ and [examples](/models/gpt-2/examples).
 This model has a fee of `0.15` dollars per hour.
 You will incur costs for software use **only** for as long as your endpoint is running.
 
-Infrastructure costs are independent and in addition to the costs of software
-and it depends on the instance type selectd.
+AWS infrastructure costs are independent and in addition to the costs of software
+and it depends on the instance type seleced to run the algorithm.
