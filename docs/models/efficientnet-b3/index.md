@@ -1,13 +1,13 @@
-# EfficientNet-B3
+# EfficientNet-B3 Image Classifier
 
-Classify images using the [EfficientNet B3 algorithm](http://proceedings.mlr.press/v97/tan19a/tan19a.pdf).
-Labels are from [ImageNet](http://www.image-net.org).
+Classify images using the [EfficientNet B3 model](http://proceedings.mlr.press/v97/tan19a/tan19a.pdf).
+Generated labels are from [ImageNet](http://www.image-net.org).
 
 Features:
 
 - State of the art accuracy on the ImageNet validation dataset:
-    - Accuracy top-1 (err): `82.242 (17.758)`
-    - Accuracy top-5 (err): `96.114 (3.886)`
+    - Top-1 Accuracy (err): `82.242 (17.758)`
+    - Top-5 Accuracy (err): `96.114 (3.886)`
 - Provides smaller and faster inference than `ConvNets`
 - Flexible endpoint to classify one or multiple images with configurable parameters
 - Only pay for what you use with a simple metered pricing model

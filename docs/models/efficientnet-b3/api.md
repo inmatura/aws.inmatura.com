@@ -43,7 +43,10 @@ predictions for the given image.
     Using the [`AWS CLI`](https://aws.amazon.com/cli/).
 
     ```
-    aws sagemaker-runtime invoke-endpoint --endpoint-name efficientnet-b3 --content-type image/jpeg --body fileb://./horses.jpg >(cat)
+    aws sagemaker-runtime invoke-endpoint \
+        --endpoint-name efficientnet-b3 \
+        --content-type image/jpeg \
+        --body fileb://./horses.jpg >(cat)
     ```
 
 === "CURL"
@@ -107,9 +110,9 @@ This allows users to send multiple images and get labels for each image in one s
 
     ```
     {
-      "image1":["sorrel","cowboy hat, ten-gallon hat","hartebeest","worm fence, snake fence, snake-rail fence, Virginia fence","horse cart, horse-cart"],
-      "image2":["koala, koala bear, kangaroo bear, native bear, Phascolarctos cinereus","wombat","indri, indris, Indri indri, Indri brevicaudatus","teddy, teddy bear","Madagascar cat, ring-tailed lemur, Lemur catta"],
-      "image3":["giant panda, panda, panda bear, coon bear, Ailuropoda melanoleuca","Arctic fox, white fox, Alopex lagopus","ice bear, polar bear, Ursus Maritimus, Thalarctos maritimus","lesser panda, red panda, panda, bear cat, cat bear, Ailurus fulgens","white wolf, Arctic wolf, Canis lupus tundrarum"]
+      "image1": ["sorrel","cowboy hat, ten-gallon hat","hartebeest","worm fence, snake fence, snake-rail fence, Virginia fence","horse cart, horse-cart"],
+      "image2": ["koala, koala bear, kangaroo bear, native bear, Phascolarctos cinereus","wombat","indri, indris, Indri indri, Indri brevicaudatus","teddy, teddy bear","Madagascar cat, ring-tailed lemur, Lemur catta"],
+      "image3": ["giant panda, panda, panda bear, coon bear, Ailuropoda melanoleuca","Arctic fox, white fox, Alopex lagopus","ice bear, polar bear, Ursus Maritimus, Thalarctos maritimus","lesser panda, red panda, panda, bear cat, cat bear, Ailurus fulgens","white wolf, Arctic wolf, Canis lupus tundrarum"]
     }
     ```
 
@@ -122,15 +125,15 @@ This allows users to send multiple images and get labels for each image in one s
       -H  "Content-Type: multipart/form-data" \
       -F "file=@horses.jpg;type=image/jpeg" \
       -F "file2=@koala.jpg;type=image/jpeg" \
-      -F "file2=@panda.jpg;type=image/jpeg"
+      -F "file3=@panda.jpg;type=image/jpeg"
 
     ```
 
     ```
     {
-      "image1":["sorrel","cowboy hat, ten-gallon hat","hartebeest","worm fence, snake fence, snake-rail fence, Virginia fence","horse cart, horse-cart"],
-      "image2":["koala, koala bear, kangaroo bear, native bear, Phascolarctos cinereus","wombat","indri, indris, Indri indri, Indri brevicaudatus","teddy, teddy bear","Madagascar cat, ring-tailed lemur, Lemur catta"],
-      "image3":["giant panda, panda, panda bear, coon bear, Ailuropoda melanoleuca","Arctic fox, white fox, Alopex lagopus","ice bear, polar bear, Ursus Maritimus, Thalarctos maritimus","lesser panda, red panda, panda, bear cat, cat bear, Ailurus fulgens","white wolf, Arctic wolf, Canis lupus tundrarum"]
+      "image1": ["sorrel","cowboy hat, ten-gallon hat","hartebeest","worm fence, snake fence, snake-rail fence, Virginia fence","horse cart, horse-cart"],
+      "image2": ["koala, koala bear, kangaroo bear, native bear, Phascolarctos cinereus","wombat","indri, indris, Indri indri, Indri brevicaudatus","teddy, teddy bear","Madagascar cat, ring-tailed lemur, Lemur catta"],
+      "image3": ["giant panda, panda, panda bear, coon bear, Ailuropoda melanoleuca","Arctic fox, white fox, Alopex lagopus","ice bear, polar bear, Ursus Maritimus, Thalarctos maritimus","lesser panda, red panda, panda, bear cat, cat bear, Ailurus fulgens","white wolf, Arctic wolf, Canis lupus tundrarum"]
     }
     ```
 
