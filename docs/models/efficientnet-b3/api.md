@@ -1,13 +1,13 @@
 # EfficientNet-B3 API
 
-The inference endpoint is a POST endpoint.
-This endpoint accepts multiple `content-type`'s that allow for flexible query options.
+The inference endpoint is a `POST` endpoint
+that accepts multiple `content-type` for different image types and other query options.
 
-## `image/png` and `image/jpeg`
+## Content-type: `image/png` and `image/jpeg`
 
-The simplest `content-type`s supported are `jpeg` and `png` images.
+The simplest `content-type` supported are `image/jpeg` and `image/png` images.
 
-The image have to be added to the request body in binary format. The response will be the top-5
+The image have to be added to the request body in binary format. The response will be the top-k
 predictions for the given image.
 
 
@@ -67,7 +67,7 @@ predictions for the given image.
     [AWS Signature Version 4](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html)
 
 
-## `multipart/form-data`
+## Content-type: multipart/form-data
 
 The enpoint also allows for the `content-type: multipart/form-data`.
 
@@ -139,4 +139,55 @@ This allows users to send multiple images and get labels for each image in one s
 
     Note that this command requires modification to authenticate the request with
     [AWS Signature Version 4](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html)
+
+
+## Custom Attributes
+
+The API accepts the [`AWS Custom-Attributes` header](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html)
+from SageMaker to control the different attributes of the model.
+
+This header should be `JSON` formated string with the different values for the parameters.
+
+| Param | Default | Description |
+|---|---|---|
+| `top_k` | `5` | Top number of label to return |
+
+For example a to get the top-1 reply instead of the default of 5:
+
+```
+X-Amzn-SageMaker-Custom-Attributes: {"top_k": 1}
+```
+
+For example to just get one reply:
+
+=== "Python (boto3)"
+
+    Using the `boto3` python library:
+
+    ```python
+    import boto3
+
+    client = boto3.client("sagemaker-runtime")
+    endpoint_name = "efficientnet-b3"
+
+    content_type = "image/jpeg"
+    custom_attributes = '{"top_k": 1}'
+
+    with open("validation/horses.jpg", "rb") as f:
+        payload = f.read()
+        payload = bytearray(payload)
+
+    response = client.invoke_endpoint(
+        EndpointName=endpoint_name,
+        ContentType=content_type,
+        CustomAttributes=custom_attributes
+        Body=payload,
+    )
+
+    print(response["Body"].read())
+    ```
+
+    ```
+    ["sorrel"]
+    ```
 

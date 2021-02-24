@@ -31,7 +31,7 @@ The response of the model is a list of generated sequences.
 
 ## Parameters
 
-| Param | Value | Default |
+| Param | Deescription | Default |
 |---|---|---|
 | `input` | Text to be completed | **required** |
 | `max_length` | Number of works to be generated | `100` |
