@@ -1,6 +1,4 @@
-# Getting started with the JupyterHub AMI
-
-## Launching the JupyterHUb AMI on EC2
+# Launching the JupyterHUb AMI in EC2
 
 1. Log in to AWS with a user with administrative privileges
 1. Navigate to the

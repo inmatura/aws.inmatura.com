@@ -6,7 +6,7 @@ nav:
   - Home: index.md
   - JupyterHub AMI:
     - Overview: jupyterhub-ami/index.md
-    - Getting started: jupyterhub-ami/getting-started.md
+    - Launch in EC2: jupyterhub-ami/launch.md
     - IDEs: jupyterhub-ami/ides.md
     - User management: jupyterhub-ami/users.md
     - Packages: jupyterhub-ami/packages.md
@@ -15,13 +15,14 @@ nav:
     - Terminating: jupyterhub-ami/terminate.md
   - GPT-2:
     - Overview: models/gpt-2/index.md
-    - Getting Started: models/gpt-2/getting-started.md
+    - Launch in SageMaker: models/gpt-2/launch.md
     - API: models/gpt-2/api.md
     - Examples: models/gpt-2/examples.md
+    - Performance: models/gpt-2/performance.md
     - Terminating: models/gpt-2/terminate.md
   - EfficientNet-B3:
     - Overview: models/efficientnet-b3/index.md
-    - Getting Started: models/efficientnet-b3/getting-started.md
+    - Launch in SageMaker: models/efficientnet-b3/launch.md
     - API: models/efficientnet-b3/api.md
     - Examples: models/efficientnet-b3/examples.md
     - Terminating: models/efficientnet-b3/terminate.md

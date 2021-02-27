@@ -1,6 +1,4 @@
-# Getting started with EfficientNet-B3
-
-## Launching the model on Sage Maker
+# Launching the EfficientNet-B3 model in SageMaker
 
 1. Log in to AWS with a user with administrative privileges
 1. Navigate to the

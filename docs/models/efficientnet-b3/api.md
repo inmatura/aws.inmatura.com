@@ -118,7 +118,7 @@ This allows users to send multiple images and get labels for each image in one s
 
 === "CURL"
 
-    In `cURL` it will be like doing doing:
+    Using `cURL` it will be like doing doing:
 
     ```
     curl -X POST "https://runtime.sagemaker.us-east-1.amazonaws.com/endpoints/efficientnet-b3/invocations" \
@@ -138,7 +138,7 @@ This allows users to send multiple images and get labels for each image in one s
     ```
 
     Note that this command requires modification to authenticate the request with
-    [AWS Signature Version 4](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html)
+    [AWS Signature Version 4](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html).
 
 
 ## Custom Attributes

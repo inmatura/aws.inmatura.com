@@ -2,7 +2,8 @@
 
 The inference endpoint is a POST endpoint that receives a JSON object on the body.
 
-Input of the endpoint is a JSON object that includes the input to the model and the different modes and parameters.
+Input of the endpoint is a JSON object in the `Body` that contains the input to the model and the parameters
+to control the different modes for text generation.
 
 ```
 {
@@ -28,6 +29,107 @@ The response of the model is a list of generated sequences.
   "This is an input text box which has a lot of options. You will be able to change the size of the text and change the font and line height.\n\nYou can also add or remove the \"back\" button. If you select a"
 ]
 ```
+
+
+Querying this [InvokeEndpoint](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html)
+requires to handle the [AWS Signature Version 4](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html).
+We provide some examples on how to query this endpoint:
+
+
+=== "Python (boto3)"
+
+    Using the `boto3` python library:
+
+    ```python
+    content_type = "application/json"
+
+    payload = json.dumps({"input": "This is the input of the algorithm"})
+
+    response = client.invoke_endpoint(
+        EndpointName=endpoint_name, ContentType=content_type, Body=payload
+    )
+
+    print(json.loads(response["Body"].read()))
+    ```
+
+    ```
+    [
+        'This is the input of the algorithm, and you can see that it has a few iterations (3, 4, 5, 6) and ends with a "cursor" (and you can see that there is an arrow pointing right).\n\n',
+        'This is the input of the algorithm, which is a string (a list of letters) separated by a period. The only thing that is really guaranteed here is that the input has a certain length, and no more than 255 characters. This is a',
+        'This is the input of the algorithm. The values you enter should be numbers in the range of 0–999. You can use a number of different input types:\n\n1–1,000: One of these random numbers (0–999'
+    ]
+    ```
+
+=== "Python (requests)"
+
+    Using [Python requests](https://requests.readthedocs.io/en/master/)
+    and the Python [aws-requests-auth](https://github.com/DavidMuller/aws-requests-auth)
+    library to handle the [AWS Signature v4](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html) workflow.
+
+    ```python
+    import requests
+    from aws_requests_auth.boto_utils import BotoAWSRequestsAuth
+
+    auth = BotoAWSRequestsAuth(
+        aws_host="runtime.sagemaker.us-east-1.amazonaws.com",
+        aws_region="us-east-1",
+        aws_service="sagemaker",
+    )
+
+    data = {"input": "Now we are using Python requests"}
+
+    response = requests.post(
+        "https://runtime.sagemaker.us-east-1.amazonaws.com/endpoints/gpt-2/invocations",
+        json=data,
+        auth=auth,
+    )
+
+    print(response.json())
+    ```
+
+    ```
+    [
+        'Now we are using Python requests module. You need to install it as follows.\n\nFor Python 2.7 :\n\nsudo apt install python-requests\n\nFor Python 3.x :\n\nsudo pip install requests\n\nStep',
+        "Now we are using Python requests library to make a request to http://www.sitemap.org. We will make a GET request to the URL and get a list of all the site's pages.\n\n#include <Python.h",
+        "Now we are using Python requests with Flask, with a few tweaks. I'll explain how to set up a simple API client with Python 3 and Flask 3 (which was just added as a module, just a week ago!).\n\nHere is the"
+    ]
+    ```
+
+=== "AWS CLI"
+
+    Using the [`AWS CLI`](https://aws.amazon.com/cli/).
+
+    ```
+    aws sagemaker-runtime invoke-endpoint \
+        --endpoint-name gpt-2 \
+        --content-type application/json \
+        --body '{"input": "Now we use the AWS CLI"} \
+        output.json
+    ```
+
+    ```
+    $ cat output.json
+    [
+        "Now we use the AWS CLI to run the task to set up the environment:\n\n# set the AMI as the instance\n\naws ec2 describe-instance-role \"arn:aws:iam::123456789012:role",
+        "Now we use the AWS CLI to create a new cloud resource. AWS CLI will generate a public key using the s3_key that we generated earlier. We'll use this to encrypt the data within this archive in order to protect the data from being",
+        "Now we use the AWS CLI to get all of the public keys.\n\n$ aws ec2 describe-public-keys [{\"AccessKeyId\": \"your-access-key-id\", \"SecretAccessKey\": \"your-secret"
+    ]
+    ```
+
+=== "CURL"
+
+    Using `cURL` it will be like doing doing:
+
+    ```
+    curl -X POST "https://runtime.sagemaker.us-east-1.amazonaws.com/endpoints/gpt-2/invocations" \
+      -H  "Content-Type: application/json" \
+      --data '{"input": "Querying the model using curl."}'
+
+    ```
+
+    Note that this command requires modification to authenticate the request with
+    [AWS Signature Version 4](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html).
+
 
 ## Parameters
 

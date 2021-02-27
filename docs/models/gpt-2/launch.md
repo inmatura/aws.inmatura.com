@@ -1,6 +1,4 @@
-# Getting started with GPT-2
-
-## Launching the model on Sage Maker
+# Launching the GPT-2 model in SageMaker
 
 1. Log in to AWS with a user with administrative privileges
 1. Navigate to the
@@ -37,16 +35,17 @@ A new endpoint will be created (this can take a couple of minutes).
 
 ## Making a query
 
-With the endpoint ready you will have an URL to make predictions, for example:
+With the SageMaker Endpoint ready you will have an HTTP endpoint to make predictions, for example:
 ```
 https://runtime.sagemaker.us-east-1.amazonaws.com/endpoints/gpt-2/invocations
 ```
 
-For documentation on how to query it see the [InvokeEndpoint documentation in AWS](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html).
+We provide examples on how to query this endpoint on the [API page](/models/gpt-2/api).
 
-The key part being how to handlee the
+- Also see the documentation [InvokeEndpoint documentation in AWS](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html)
+- The key part being how to handlee the
 [AWS Signature Version 4](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html),
-for example [using Python](https://docs.aws.amazon.com/general/latest/gr/sigv4-signed-request-examples.html).
+for example [using Python](https://docs.aws.amazon.com/general/latest/gr/sigv4-signed-request-examples.html)
 
 ### Insonmia
 
@@ -66,7 +65,7 @@ Select `JSON` as the body type and use the following test query:
 }
 ```
 
-The result should be:
+With a response like this:
 
 ```
 [
@@ -75,31 +74,3 @@ The result should be:
   "This is an input text for the widget, and it must be in the correct format. The format must be one of the following:\n\n\nText to enter on the form\n\nExample: What is the total distance in miles to your next destination"
 ]
 ```
-
-### boto
-
-You can also use the Python `boto3` library to make a query.
-
-```python
-import boto3
-
-client = boto3.client('sagemaker-runtime')
-endpoint_name = "gpt-2"
-
-content_type = "application/json"
-payload = '{"input": "This is an input text"}'
-
-response = client.invoke_endpoint(
-    EndpointName=endpoint_name,
-    ContentType=content_type,
-    Body=payload
-)
-
-response["Body"].read()
-```
-
-### API docs
-
-For a complete documentation of the API with it's different modes and parameters
-see [API](/models/gpt-2/api).
-
