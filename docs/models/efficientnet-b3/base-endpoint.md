@@ -1,8 +1,16 @@
-# Launching the EfficientNet-B3 model in SageMaker
+# Deploy an endpoint for the base EfficientNet model
+
+The base [EfficientNet model](https://aws.amazon.com/marketplace/pp/prodview-b4jqie4ebeo4y)
+provides image classification on the 1000 ImageNet labels.
+
+!!! info "Custom model"
+    To create a custom model to classify images in based in custom labels see [the Training page](/models/efficientnet-b3/train).
+
+## 1. Subscribe to the offering
 
 1. Log in to AWS with a user with administrative privileges
 1. Navigate to the
-[EfficientNet-B3](https://aws.amazon.com/marketplace/pp/Daniel-Rodriguez-GPT-2-XL-Text-generation/prodview-cdujckyfypprg)
+[EfficientNet-B3](https://aws.amazon.com/marketplace/pp/prodview-b4jqie4ebeo4y)
 listing on the AWS Marketplace
 1. Click `Continue to Subscribe`
 1. Click on `Accept offer` (it might take 1 or 2 minutes for AWS to accept the offer).
@@ -11,29 +19,33 @@ listing on the AWS Marketplace
 
 1. Once you are subscribed click `Continue to Configuration`
 1. On the `Configure and launch` page
-    1. Select `SageMaker console` as the Launch Method (you can also use the CLI if you preffer)
-    1. Select the version and region where you want to launch the model
+    1. Select `SageMaker console` as the Launch Method (you can also use the AWS CLI)
+    1. Select the version and region where you want to launch the model endpoint
     1. On `Amazon SageMaker options` select `Create a real-time inference endpoint`
-    1. Click on `View in Amazon SageMaker`
-1. You will be sent to the `Create endpoint` wizard on the Amazon SageMaker console
-    1. Name the model, e.g. `efficientnet-b3`
-    1. Select or create a new IAM role for executing the model
-    1. Under `Container definition` be sure `Use a model package subscription from AWS Marketplace` is selected
-    1. Click on `Next`
-    1. Name the endpoint, e.g. `efficientnet-b3`
-    1. Under `Attach endpoint configuration` select `Create a new endpoint configuration`
-    1. Be sure the named model (e.g. `efficientnet-b3`) is listed under `Production variants`
+1. Click on `View in Amazon SageMaker`
 
-        Here you can select the instance types you want for the endpoint. The minimun required is `ml.m5.4xlarge`
+## 2. Create the endpoint
 
+In the `Create endpoint` page:
+
+1. Select a `Model name` e.g. `efficientnet-b3`
+1. Select or create a new IAM role for executing the model
+1. Under `Container definition`
+    1. Verify `Use a model package subscription from AWS Marketplace` is selected
+1. Click on `Next`
+1. Select an `Endpoint name` e.g. `efficientnet-b3`
+1. Under `Attach endpoint configuration` select `Create a new endpoint configuration`
+1. Under `New endpoint configuration`
+    1. Verify the new model (e.g. `efficientnet-b3`) is listed under `Production variants`
+    1. Click on `Edit` in the `Actions` column and select the instance types you want for the endpoint. The minimun recommended is `ml.c5.xlarge`
     1. Click on `Create endpoint configuration`
-    1. Finally click on `Submit`
+1. Finally click on `Submit`
 
 A new endpoint will be created (this can take a couple of minutes).
 
 ![SageMaker efficientnet-b3 endpoint](/assets/img/models/efficientnet-b3/sagemaker-endpoint.png)
 
-## Making a query
+## 3. Making a query
 
 With the endpoint ready you will have an URL to make predictions, for example:
 ```
@@ -80,10 +92,9 @@ Response:
 ["sorrel","cowboy hat, ten-gallon hat","hartebeest","worm fence, snake fence, snake-rail fence, Virginia fence","horse cart, horse-cart"]
 ```
 
-Note that [`sorrel` is a type of horse](https://en.wikipedia.org/wiki/Sorrel_(horse)).
+!!! note "Sorrel"
+    Note that [`sorrel` is a type of horse](https://en.wikipedia.org/wiki/Sorrel_(horse)).
 
-### API docs
-
-For a complete documentation of the API with it's different modes and parameters
-see [API](/models/efficientnet-b3/api).
+For the complete documentation of the API including it's different modes, parameters
+and more ways to query the Invocations endpoint see the [API page](/models/efficientnet-b3/api).
 

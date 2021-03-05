@@ -22,7 +22,9 @@ nav:
     - Terminating: models/gpt-2/terminate.md
   - EfficientNet-B3:
     - Overview: models/efficientnet-b3/index.md
-    - Launch in SageMaker: models/efficientnet-b3/launch.md
+    - Train an Algorithm in SageMaker: models/efficientnet-b3/train.md
+    - Launch Endpoint - Custom model: models/efficientnet-b3/train-endpoint.md
+    - Launch Endpoint - Base model: models/efficientnet-b3/base-endpoint.md
     - API: models/efficientnet-b3/api.md
     - Examples: models/efficientnet-b3/examples.md
     - Terminating: models/efficientnet-b3/terminate.md
@@ -46,6 +48,7 @@ markdown_extensions:
   - meta
   - admonition
   - codehilite
+  - attr_list
   - pymdownx.tabbed
   - pymdownx.superfences
   - toc:

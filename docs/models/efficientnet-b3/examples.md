@@ -1,4 +1,7 @@
-# EfficientNet-B3 Examples
+# EfficientNet-B3 base model examples
+
+There are example predictions for the base EfficientNet model trained
+on the ImageNet dataset.
 
 === "hammer.jpg"
 
