@@ -26,7 +26,7 @@ serve:  ## Serve docs
 	mkdocs serve
 
 
-reset: clean  ## Reset everything
+cleanall: clean  ## Reset everything
 clean: ## Clean build
 	rm -rf $(CURDIR)/site
 
