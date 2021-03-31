@@ -11,6 +11,9 @@ PWD := $(shell pwd)
 first: help
 
 
+# ------------------------------------------------------------------------------
+# Python
+
 env:  ## Create virtualenv
 	mamba env create
 
@@ -25,6 +28,9 @@ build:  ## mkdocs build
 serve:  ## Serve docs
 	mkdocs serve
 
+
+# ------------------------------------------------------------------------------
+# Other
 
 cleanall: clean  ## Reset everything
 clean: ## Clean build
