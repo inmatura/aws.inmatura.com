@@ -1,7 +1,11 @@
 # Object Detection Mask R-CNN model: API
 
-The model Endpoint accepts an image `Content-Type` of: `image/jpeg` or `image/png`
-and returns an image or a JSON object. The reponse type can be controlled by the `Accept` header or by the [`Custom Attributes` header](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax).
+The model Endpoint accepts an image `Content-Type` of: `image/jpeg` or `image/png`.
+
+The response image will be the same input image with labels and boxes around the detected objects.
+Optionally it can return just a JSON object with the labels and coordinates of the detected objects.
+
+The reponse type can be controlled by the `Accept` or [`Custom Attributes` header](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax) headers.
 
 Example image `horse-guard.jpg`:
 
@@ -141,8 +145,8 @@ The JSON object has the following structure:
 }
 ```
 
-The coordinates indicate a box from point `(x1, y1)` to `(x2, y2)`.
-The `(0, 0)` point is the top left corner of the image
+The coordinates pairs indicate a box from point `(x1, y1)` to `(x2, y2)`.
+The `(0, 0)` point is the top left corner of the image.
 
 ## Custom Attributes
 
