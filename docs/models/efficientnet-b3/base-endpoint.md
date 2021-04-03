@@ -48,23 +48,18 @@ A new endpoint will be created (this can take a couple of minutes).
 ## 3. Making a query
 
 With the endpoint ready you will have an URL to make predictions, for example:
+
 ```
 https://runtime.sagemaker.us-east-1.amazonaws.com/endpoints/efficientnet-b3/invocations
 ```
 
-For complete documentation on how to query this endpoint see the [AWS Docs: InvokeEndpoint documentation in AWS](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html).
+--8<--
+docs/models/snippets/info-how-to-query.md
+--8<--
 
-The key part being how to handlee the
-[AWS Signature Version 4](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html),
-for example [using Python](https://docs.aws.amazon.com/general/latest/gr/sigv4-signed-request-examples.html).
-
-We provide some examples using some HTTP clients.
-
-We will use this photo of some horses as an example:
+A simple example using `boto` and this photo as input:
 
 ![Horses](/assets/img/models/efficientnet-b3/horses.jpg)
-
-### boto
 
 You can use the Python `boto3` library to make a query.
 
@@ -95,6 +90,7 @@ Response:
 !!! note "Sorrel"
     Note that [`sorrel` is a type of horse](https://en.wikipedia.org/wiki/Sorrel_(horse)).
 
-For the complete documentation of the API including it's different modes, parameters
-and more ways to query the Invocations endpoint see the [API page](/models/efficientnet-b3/api).
+!!! info "Full API docs"
+    For the complete documentation of the API including the different inputs and responses
+    and more ways to query the Invocations endpoint see the [API page](/models/efficientnet-b3/api).
 

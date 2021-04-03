@@ -1,3 +1,12 @@
+// Medium Zoom
+
+mediumZoom(".md-content article img", {
+    background: "#1a1a1a",
+    scrollOffset: 0,
+    margin: 30,
+});
+
+
 // Terminal CSS
 // Iterate all the items that start with id=__code
 

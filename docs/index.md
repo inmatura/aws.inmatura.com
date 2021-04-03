@@ -11,3 +11,4 @@ Here you will find documentation for the various products offered throught the
 | [GPT-2](/models/gpt-2) | State of the art text generation | [Launch on SageMaker](https://aws.amazon.com/marketplace/pp/Daniel-Rodriguez-GPT-2-XL-Text-generation/prodview-cdujckyfypprg) |
 | [EfficientNet Model](/models/efficientnet-b3) | State of the art image classification | [Launch on SageMaker](https://aws.amazon.com/marketplace/pp/prodview-b4jqie4ebeo4y) |
 | [EfficientNet Algorithm](/models/efficientnet-b3) | Train custom image classifiers | [Launch on SageMaker](https://aws.amazon.com/marketplace/pp/prodview-ezdqmlf7aumf2) |
+| [Object Detection Mask R- CNN](/models/img-obj-mask-r-cnn) | State of the art object detection | [Launch on SageMaker]() |

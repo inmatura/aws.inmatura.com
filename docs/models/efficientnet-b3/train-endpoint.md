@@ -62,13 +62,9 @@ With the endpoint ready you will have an URL to make predictions, for example:
 https://runtime.sagemaker.us-east-1.amazonaws.com/endpoints/ants-and-bees/invocations
 ```
 
-!!! info "Querying the Invocations endpoint"
-
-    For complete documentation on how to query this endpoint see the [AWS Docs: InvokeEndpoint documentation in AWS](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html).
-
-    The key part being how to handlee the
-    [AWS Signature Version 4](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html),
-    for example [using Python](https://docs.aws.amazon.com/general/latest/gr/sigv4-signed-request-examples.html).
+--8<--
+docs/models/snippets/info-how-to-query.md
+--8<--
 
 As a quick example let's use these two images:
 
@@ -132,8 +128,9 @@ Querying the endpoint:
     ['bees', 'ants']
     ```
 
-    We can see the first label is `bees`.
+    We can see the first predicted label is `bees`.
 
-For the complete documentation of the API including it's different modes, parameters
-and more ways to query the Invocations endpoint see the [API page](/models/efficientnet-b3/api).
+!!! info "Full API docs"
+    For the complete documentation of the API including the different inputs and responses
+    and more ways to query the Invocations endpoint see the [API page](/models/efficientnet-b3/api).
 

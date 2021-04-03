@@ -28,6 +28,13 @@ nav:
     - API: models/efficientnet-b3/api.md
     - Examples: models/efficientnet-b3/examples.md
     - Terminating: models/efficientnet-b3/terminate.md
+  - Object Detection Mask R-CNN:
+    - Overview: models/img-obj-mask-r-cnn/index.md
+    - Launch Endpoint: models/img-obj-mask-r-cnn/launch-endpoint.md
+    - API: models/img-obj-mask-r-cnn/api.md
+    - Examples: models/img-obj-mask-r-cnn/examples.md
+    - Performance: models/img-obj-mask-r-cnn/performance.md
+    - Terminating: models/img-obj-mask-r-cnn/terminate.md
 
 theme:
   name: material
@@ -35,22 +42,48 @@ theme:
   favicon: assets/img/favicon.png
   logo: assets/img/logo.png
 
+  features:
+    - navigation.tabs
+    - navigation.sections
+
+  palette:
+    # Light mode
+    - indigo: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: red
+      accent: red
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
 extra_css:
   - assets/css/custom.css
 
 extra_javascript:
+  - assets/js/medium-zoom.min.js
   - assets/js/custom.js
 
 plugins:
   - search
 
 markdown_extensions:
-  - meta
   - admonition
-  - codehilite
+  - codehilite:
+      guess_lang: false
   - attr_list
+  - meta
   - pymdownx.tabbed
   - pymdownx.superfences
+  - pymdownx.snippets:
+      check_paths: true
   - toc:
       permalink: true
 
