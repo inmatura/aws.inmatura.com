@@ -3,11 +3,8 @@
 The model supports both CPU and GPU in instance types.
 Depending on the instance type selected the inference time might vary considerably. The recommended approach is to use an instance with a GPU.
 
-Because of the nature of this model the API can only process one request at a time.
-So you would need to scale this accordingly to the number of expected concurrent users.
-
 We provide some simple benchmarks on some instance types but encorauge you to do your own to determine
-the instance-type and number of concurrent instances combination for your use case.
+the instance type and number of concurrent instances combination for your use case and number of users.
 
 | Instance Type | Concurrent users | Request Count | Failure Count | Median Response Time (ms) | 90%ile Response Time (ms) | Average Response Time (ms) | Min Response Time (ms) | Max Response Time (ms) | Average Content Size (bytes) | Numer of Requests/s |
 |---|---|---|---|---|---|---|---|---|---|---|
