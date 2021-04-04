@@ -4,7 +4,7 @@
 
 1. Log in to AWS with a user with administrative privileges
 1. Navigate to the
-[Object Detection Mask R-CNN]()
+[Object Detection Mask R-CNN](https://aws.amazon.com/marketplace/pp/prodview-dxs3ysuie4q5m)
 listing on the AWS Marketplace
 1. Click `Continue to Subscribe`
 1. Click on `Accept offer` (it might take 1 or 2 minutes for AWS to accept the offer)

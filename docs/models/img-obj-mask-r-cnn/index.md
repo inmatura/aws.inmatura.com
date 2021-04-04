@@ -1,9 +1,9 @@
 # Object Detection Mask R-CNN model
 
-The [Object Detection Mask R-CNN model](https://aws.amazon.com/marketplace/)
+The [Object Detection Mask R-CNN model](https://aws.amazon.com/marketplace/pp/prodview-dxs3ysuie4q5m)
 provides state of the art object detection on images with fast inference times.
 
-[Launch on SageMaker]().
+[Launch on SageMaker](https://aws.amazon.com/marketplace/pp/prodview-dxs3ysuie4q5m).
 
 Features:
 
