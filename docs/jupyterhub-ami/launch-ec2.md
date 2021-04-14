@@ -11,7 +11,7 @@ listing on the AWS Marketplace
 
 1. Once you are subscribed click `Continue to Configuration`
 1. On the `Configure this software` page, select the AWS region where the EC2 instance will reside and click `Continue to Launch`
-1. On the `Launch this software` page, you can configure the `Instance type`, `VPC`, `subnet`, `Security Group` and `keypair`
+1. On the `Launch this software` page, you can configure the `Instance type`, `VPC`, `subnet`, `Security Group`, and `keypair`
 
     You can also select `Launch through EC2` under `Choose Action`, to use the regular EC2 flow
 
@@ -21,22 +21,24 @@ Now go to the [EC2 Dashboard](https://console.aws.amazon.com/ec2) and locate the
 
 Copy the public IP address and open it in a browser and you should now see the JupyterHub UI.
 
-Note that the UI might take a couple of minutes to start the first time
-while it's configuring the services and creating the first user.
-Also be sure to use `http` and not `https`.
+!!! note
+    Note that the UI might take a couple of minutes to start the first time
+    while it's configuring the services and creating the first user.
+    Also, be sure to use `HTTP` and not `HTTPS`.
 
-![JupyterHub login](/assets/img/jupyterhub-ami/jhub-login.png)
+![JupyterHub login](/assets/img/jupyterhub-ami/jupyterhub-login.png)
 
 ## Accessing JupyterHub
 
-After clicking `Sign in with KeyCloak` you can login to JupyterHub using:
+After clicking `Sign in with KeyCloak` you will be sent to KeyCloak where you
+can log in to JupyterHub using the default user:
 
-- username: `jupyterhub-admin`
-- password: Instance ID of the EC2 instance, for example `i-0b3445939c749244c`
+- Username: `jupyterhub-admin`
+- Password: Instance ID of the EC2 instance, for example `i-0b3445939c749244c`
 
 ![KeyCloak login](/assets/img/jupyterhub-ami/keycloak-login.png)
 
-You will now be redirected to JupyterHub and you Jupyter session will start,
+You will now be redirected to JupyterHub and your Jupyter session will start,
 you will now see the Jupyter Lab UI.
 
-![KeyCloak login](/assets/img/jupyterhub-ami/jlab.png)
+![Jupyter Lab](/assets/img/jupyterhub-ami/jupyter-lab.png)

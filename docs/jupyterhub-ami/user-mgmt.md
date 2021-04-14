@@ -5,15 +5,13 @@ This allows for centralized user management that can be connected to other
 authentication backends such as LDAP.
 
 You can access the KeyCloak management UI at: `http://<ip-address>/auth`.
-Then Click on `Administration Console` and login using the `admin` username,
-the password will be the EC2 instance ID, for example `i-0b3445939c749244c`.
-
-You will land at the `jupyterhub` realm admin console
+Then Click on `Administration Console` and log in using the `admin` username,
+the password will be the EC2 instance ID, for example, `i-0b3445939c749244c`.
 
 ![JupyterHub KeyCloak](/assets/img/jupyterhub-ami/keycloak-realm.png)
 
-Users that can login into the JupyterHub installation must belong to the `jupyterhub`
-realm. For example the default `jupyterhub-admin` user is located there.
+For a user to be able to login into JupyterHub it must belong to the `jupyterhub`
+realm. The default `jupyterhub-admin` user is located there.
 
 ## Add a user
 
@@ -35,17 +33,25 @@ To add a password click on the `Credentials` page and set a temp password.
 ![JupyterHub KeyCloak](/assets/img/jupyterhub-ami/keycloak-user-temp-pass.png)
 
 Now when the new user logs in with the temp password it will be prompted to
-select a new onw.
+select a new one.
 
 ![JupyterHub KeyCloak](/assets/img/jupyterhub-ami/keycloak-update-pass.png)
 
-And after that it will launch it's Jupyter session.
+And after that, the new user will be sent to its Jupyter session.
 
 ## Other user actions
 
 On the KeyCloak admin UI you can disable and delete users, connect to external
 authentication systems such as AD/LDAP and more.
 
-To take advantage of other funcionality of KeyCloak
+To take advantage of other functionality of KeyCloak
 please take a look at their [official documentation](https://www.keycloak.org/documentation).
+
+## JupyterHub Admin
+
+Admin users are able to control users from the JupyterHub Admin Panel.
+
+![JupyterHub Admin](/assets/img/jupyterhub-ami/jupyterhub-admin.png)
+
+The default the `jupyterhub-admin` is also an admin.
 
