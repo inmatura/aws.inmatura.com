@@ -6,12 +6,15 @@ nav:
   - Home: index.md
   - JupyterHub AMI:
     - Overview: jupyterhub-ami/index.md
-    - Launch in EC2: jupyterhub-ami/launch.md
+    - Launch in EC2: jupyterhub-ami/launch-ec2.md
     - IDEs: jupyterhub-ami/ides.md
-    - User management: jupyterhub-ami/users.md
+    - User management: jupyterhub-ami/user-mgmt.md
+    - Configuration: jupyterhub-ami/configuration.md
+    - GPU: jupyterhub-ami/gpu.md
     - Packages: jupyterhub-ami/packages.md
-    - Management: jupyterhub-ami/management.md
-    - SSL: jupyterhub-ami/ssl.md
+    - Libraries:
+      - Dask: jupyterhub-ami/dask.md
+      - Voila: jupyterhub-ami/voila.md
     - Terminating: jupyterhub-ami/terminate.md
   - GPT-2:
     - Overview: models/gpt-2/index.md

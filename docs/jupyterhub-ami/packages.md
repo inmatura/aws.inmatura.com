@@ -51,8 +51,12 @@ For the Python 3.8 and 3.7 installation the following packages are installed.
 | `xgboost` | `1.3.3` |
 | `vega-datasets` | `0.9.0` |
 
-Additionally the Spacy and NLTK data is included as part of the AMI so you can use
-those libraries inmediatly.
+!!! info "PyPI"
+    All Python packages are installed from PyPI using PIP
+
+!!! info "NLTK and Spacy"
+    Additionally the Spacy and NLTK data is included as part of the AMI so you can use
+    those libraries out of the box.
 
 ## Installing new Python packages
 

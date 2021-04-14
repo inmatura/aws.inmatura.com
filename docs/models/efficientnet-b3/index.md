@@ -31,4 +31,4 @@ This model has a fee of `0.15` dollars per hour.
 You will incur costs for software use **only** for as long as the endpoint is running.
 
 AWS infrastructure costs are independent and in addition to the costs of the software
-and it depends on the instance type seleced to host the algorithm.
+and it depends on the instance type selected to host the algorithm.
