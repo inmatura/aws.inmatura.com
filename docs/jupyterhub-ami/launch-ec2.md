@@ -26,7 +26,7 @@ Copy the public IP address and open it in a browser and you should now see the J
     while it's configuring the services and creating the first user.
     Also, be sure to use `HTTP` and not `HTTPS`.
 
-![JupyterHub login](/assets/img/jupyterhub-ami/jhub-login.png)
+![JupyterHub login](/assets/img/jupyterhub-ami/jupyterhub-login.png)
 
 ## Accessing JupyterHub
 

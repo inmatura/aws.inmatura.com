@@ -47,3 +47,11 @@ authentication systems such as AD/LDAP and more.
 To take advantage of other functionality of KeyCloak
 please take a look at their [official documentation](https://www.keycloak.org/documentation).
 
+## JupyterHub Admin
+
+Admin users are able to control users from the JupyterHub Admin Panel.
+
+![JupyterHub Admin](/assets/img/jupyterhub-ami/jupyterhub-admin.png)
+
+The default the `jupyterhub-admin` is also an admin.
+
