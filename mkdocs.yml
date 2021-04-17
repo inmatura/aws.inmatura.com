@@ -93,5 +93,5 @@ markdown_extensions:
       permalink: true
 
 google_analytics:
-  - "UA-35523657-5"
+  - "UA-35523657-8"
   - "auto"
