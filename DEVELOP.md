@@ -5,8 +5,7 @@
 Create environment:
 
 ```
-make env
-conda activate docs.extrapolations.dev
+poetry install
 ```
 
 Run docs:

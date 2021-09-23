@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "docs.extrapolaciones.com"
+version = "1.0.0"
+description = "Source for docs.extrapolaciones.com"
+authors = ["Daniel Rodriguez"]
+
+[tool.poetry.dependencies]
+python = ">=3.7.1,<4"
+mkdocs = "^1.2.2"
+mkdocs-material = "^7.3.0"
+mkdocs-jupyter = "^0.17.5"
+mkdocs-minify-plugin = "^0.4.1"
+Pygments = "^2.10.0"
+pymdown-extensions = "^8.2"
+
+[tool.poetry.dev-dependencies]
+pylint = "^2.10.2"
+black = "^21.8b0"
+isort = "^5.9.3"
+flake8 = "^3.9.2"
+
+# [tool.poetry.group.test]
+# optional = true
+# [tool.poetry.group.test.dependencies]

@@ -67,6 +67,7 @@ p.code-header {
     font-family: "Roboto Mono", "Courier New", Courier, monospace;
 }
 
+/* Code blocks */
 pre {
     overflow: auto;
 }
@@ -79,8 +80,15 @@ pre .code-noselect {
     user-select: none;
 }
 
-.md-footer-meta {
-    background: none;
+/* For highlighted blocks */
+.codehilite pre code {
+    background-color: #263238;
+}
+
+/* For non highlighted blocks */
+.md-typeset pre code {
+    background-color: #263238;
+    color: #fff;
 }
 
 /* Medium Zoom */
