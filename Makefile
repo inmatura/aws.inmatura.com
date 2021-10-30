@@ -4,25 +4,25 @@ SHELL := bash
 .DELETE_ON_ERROR:
 MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
+.DEFAULT_GOAL := help
 
-PWD := $(shell pwd)
 
-
-first: help
+all: build
 
 
 # ------------------------------------------------------------------------------
 # Python
 
 env:  ## Create virtualenv
-	mamba env create
+	poetry install
 
 
-.PHONY: docs
-docs: build
 build:  ## mkdocs build
 	rm -rf $(CURDIR)/site;
 	mkdocs build
+
+docs: build
+.PHONY: docs
 
 
 serve:  ## Serve docs
@@ -32,9 +32,12 @@ serve:  ## Serve docs
 # ------------------------------------------------------------------------------
 # Other
 
-cleanall: clean  ## Reset everything
 clean: ## Clean build
 	rm -rf $(CURDIR)/site
+
+
+reset: clean  ## Reset everything
+	rm -rf $(CURDIR)/.env
 
 
 help:  ## Show this help menu

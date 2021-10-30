@@ -5,7 +5,7 @@ out of the box, no extra configuration is needed.
 
 For example, after launching AMI in a `g4dn.xlarge` instance run `nvidia-smi`.
 
-```
+```shell title="Terminal"
 $ nvidia-smi
 +-----------------------------------------------------------------------------+
 | NVIDIA-SMI 460.32.03    Driver Version: 460.32.03    CUDA Version: 11.2     |
@@ -39,7 +39,7 @@ Cuda version `11.2` is included to work with latest PyTorch and TensorFlow versi
 
 To test PyTorch and TensorFlow support for GPU use the following snippets:
 
-```python
+```python title="Python"
 import torch as th
 
 print(th.__version__)
@@ -50,7 +50,7 @@ print(th.cuda.get_device_name(th.cuda.current_device()))
 print(th.backends.cudnn.version())
 ```
 
-```python
+```python title="Python"
 import tensorflow as tf
 
 print(tf.__version__)
