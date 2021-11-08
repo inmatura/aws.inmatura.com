@@ -1,7 +1,12 @@
 # GPU
 
-The JupyterHub AMI includes NVIDIA drivers to support all GPU instance types
-out of the box, no extra configuration is needed.
+The JupyterHub AMI includes NVIDIA drivers and CUDA to support the GPUs available
+on the AWS GPU instance types out of the box, no extra configuration is needed.
+
+| Software | Version |
+|---|---|
+| `NVIDIA Drivers` | `` |
+| `CUDA` | `11.4` |
 
 For example, after launching AMI in a `g4dn.xlarge` instance run `nvidia-smi`.
 
@@ -28,16 +33,9 @@ $ nvidia-smi
 +-----------------------------------------------------------------------------+
 ```
 
-!!! info "Version"
-    The version of the drivers installed is `460.32.03`.
-
-## CUDA
-
-Cuda version `11.2` is included to work with latest PyTorch and TensorFlow versions.
-
 ## PyTorch and TensorFlow
 
-To test PyTorch and TensorFlow support for GPU use the following snippets:
+PyTorch and TensorFlow GPU versions are installed in all Python environments.
 
 ```python title="Python"
 import torch as th
@@ -63,4 +61,15 @@ print(tf.test.gpu_device_name())
 ```
 
 !!! info "Sample Notebooks"
-    These are also part of the sample notebooks `pytorch-gpu.ipynb` and `tensorflow-gpu.ipynb`.
+    These sample codes are included in sample notebooks: `pytorch-gpu.ipynb` and `tensorflow-gpu.ipynb`.
+
+## RAPIDS
+
+A special RAPIDS conda environment is installed to use the RAPIDS libraries.
+
+```python title="Python"
+import cudf
+import cuml
+
+
+```

@@ -7,15 +7,22 @@ nav:
   - JupyterHub AMI:
     - Overview: jupyterhub-ami/index.md
     - Launch in EC2: jupyterhub-ami/launch-ec2.md
-    - IDEs: jupyterhub-ami/ides.md
     - User management: jupyterhub-ami/user-mgmt.md
     - Configuration: jupyterhub-ami/configuration.md
-    - GPU: jupyterhub-ami/gpu.md
-    - Packages: jupyterhub-ami/packages.md
+    - Terminating: jupyterhub-ami/terminate.md
+    - IDEs:
+      - Jupyter: jupyterhub-ami/jupyter.md
+      - RStudio: jupyterhub-ami/rstudio.md
+      - VS Code: jupyterhub-ami/vscode.md
+    - Languages:
+      - Python: jupyterhub-ami/python.md
+      - R: jupyterhub-ami/r.md
     - Libraries:
       - Dask: jupyterhub-ami/dask.md
+      - GPU: jupyterhub-ami/gpu.md
+      - Tensorflow/PyTorch: jupyterhub-ami/tf-th.md
+      - RAPIDS: jupyterhub-ami/rapids.md
       - Voila: jupyterhub-ami/voila.md
-    - Terminating: jupyterhub-ami/terminate.md
   - GPT-2:
     - Overview: models/gpt-2/index.md
     - Launch in SageMaker: models/gpt-2/launch.md
@@ -83,6 +90,8 @@ plugins:
 
 markdown_extensions:
   - admonition
+  - pymdownx.details
+  - pymdownx.superfences
   - codehilite:
       guess_lang: false
   - attr_list

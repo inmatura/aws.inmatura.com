@@ -1,21 +1,25 @@
-# Packages
+# Python
 
-The JupyterHub AMI comes with multiple Python and R versions and packages installed
-out of the box.
+The JupyterHub AMI comes with multiple Python versions plus some default
+data science packages installed out of the box.
 
-## Python
+## Python versions
 
-Each Python installation is independent of each other, they are based on `Miniconda`.
+Each Python installation is independent of each other, they are based on `Mambaforge`.
 
 | Version | Location |
 |---|---|
+| `Python 3.9.5` | `/opt/python/3.9` |
 | `Python 3.8.5` | `/opt/python/3.8` |
 | `Python 3.7.9` | `/opt/python/3.7` |
-| `Python 3.6.12` | `/opt/python/3.6` |
+| `Python 3.8.5` | `/opt/python/3.8-rapids` |
 
-## Python Packages
+!!! info "Owner"
+    The owner of this directories is the `ubuntu` user (the same one used to SSH).
 
-For the Python 3.8 and 3.7 installation the following packages are installed.
+### Python Packages
+
+For the all the environments the following packages are installed.
 
 | Package | Version |
 | --- | --- |
@@ -60,12 +64,12 @@ For the Python 3.8 and 3.7 installation the following packages are installed.
     Additionally the Spacy and NLTK data is included as part of the AMI so you can use
     those libraries out of the box.
 
-## Installing new Python packages
+## Installing Python packages
 
-Users can install new packages into user space by using pip directly in the
+Single users can install new packages into it's user space by using pip directly in the
 target Python installation. For example, opening a new terminal in Jupyter and running:
 
-```
+```shell title="Terminal"
 jupyter-user@ip-172-31-93-190:~$ /opt/python/3.8/bin/pip install boto
 Defaulting to user installation because normal site-packages is not writeable
 Collecting boto
@@ -75,13 +79,15 @@ Installing collected packages: boto
 Successfully installed boto-2.49.0
 ```
 
-Now this user will be able to import and use the new library on the target kernel,
-`boto` on Python 3.8 on this example.
+Will install `boto` just for the `jupyter-user` on the Python 3.8 environment.
+
+### Installing global packages
 
 If you wish to make this package available to all users for a particular Python installation,
-[SSH](/jupyterhub-ami/management/#ssh) into the EC2 instance and run the pip install command there.
+[SSH](/jupyterhub-ami/management/#ssh) into the EC2 instance and run the
+`pip install` command as the `ubuntu` user.
 
-```
+```shell title="Terminal"
 ubuntu@ip-172-31-93-190:~$ /opt/python/3.7/bin/pip install boto
 Collecting boto
   Downloading boto-2.49.0-py2.py3-none-any.whl (1.4 MB)
@@ -91,34 +97,3 @@ Successfully installed boto-2.49.0
 ```
 
 Now all users that open a Python 3.7 notebook will be able to use `boto`.
-
-## R
-
-| Version | Location |
-|---|---|
-| `R 4.0.3` | `/opt/R/4.0.3` |
-| `R 3.6.3` | `/opt/R/3.6.3` |
-| `R 3.5.3` | `/opt/R/3.5.3` |
-
-## R Packages
-
-| Package | Version |
-| --- | --- |
-| `data.table` | `1.14.0 ` |
-| `dbplyr` | `2.1.1 ` |
-| `devtools` | `2.4.0 ` |
-| `dplyr` | `1.0.5 ` |
-| `ggplot2` | `3.3.3 ` |
-| `IRkernel` | `1.1.1 ` |
-| `keras` | `2.4.0 ` |
-| `odbc` | ` 1.3.2 ` |
-| `packrat` | `  0.6.0 ` |
-| `Rcpp` | ` 1.0.6 ` |
-| `RCurl` | ` 1.98-1.3 ` |
-| `reticulate` | `1.18 ` |
-| `rmarkdown` | `2.7 ` |
-| `shiny` | `1.6.0 ` |
-| `sparklyr` | `1.6.2 ` |
-| `tensorflow` | `2.4.0 ` |
-| `tidymodels` | `0.1.2 ` |
-| `tidyselect` | `1.1.0 ` |
