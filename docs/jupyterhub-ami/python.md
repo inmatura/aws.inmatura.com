@@ -9,10 +9,10 @@ Each Python installation is independent of each other, they are based on `Mambaf
 
 | Version | Location |
 |---|---|
-| `Python 3.9.5` | `/opt/python/3.9` |
-| `Python 3.8.5` | `/opt/python/3.8` |
-| `Python 3.7.9` | `/opt/python/3.7` |
-| `Python 3.8.5` | `/opt/python/3.8-rapids` |
+| `Python 3.9.7` | `/opt/python/3.9` |
+| `Python 3.8.12` | `/opt/python/3.8` |
+| `Python 3.7.12` | `/opt/python/3.7` |
+| `Python 3.8.12` | `/opt/python/3.8-rapids` |
 
 !!! info "Owner"
     The owner of this directories is the `ubuntu` user (the same one used to SSH).
@@ -24,41 +24,49 @@ For the all the environments the following packages are installed.
 | Package | Version |
 | --- | --- |
 | `altair` | `4.1.0` |
-| `awscli` | `1.19.51` |
-| `beautifulsoup4` | `4.9.3` |
-| `bokeh` | `2.3.1` |
-| `cloudpickle` | `1.6.0` |
-| `dash` | `1.20.0` |
-| `gensim` | `4.0.1` |
-| `ipykernel` | `5.5.3` |
-| `ipython` | `7.22.0` |
+| `awscli` | `1.21.12` |
+| `beautifulsoup4` | `4.10.0` |
+| `bokeh` | `2.4.1` |
+| `bqplot` | `0.12.31` |
+| `cloudpickle` | `2.0.0` |
+| `dash` | `2.0.0` |
+| `dash-core-components` | `2.0.0` |
+| `dash-html-components` | `2.0.0` |
+| `dash-table` | `5.0.0` |
+| `gensim` | `4.1.2` |
+| `ipykernel` | `6.5.0` |
+| `ipython` | `7.29.0` |
 | `ipython-genutils` | `0.2.0` |
-| `ipywidgets` | `7.6.3` |
-| `Keras` | `2.4.3` |
-| `matplotlib` | `3.4.1` |
-| `nltk` | `3.6.1` |
-| `numpy` | `1.20.2` |
+| `ipywidgets` | `7.6.5` |
+| `Keras-Preprocessing` | `1.1.2` |
+| `matplotlib` | `3.4.3` |
+| `matplotlib-inline` | `0.1.3` |
+| `nltk` | `3.6.5` |
+| `numpy` | `1.21.4` |
 | `nycflights13` | `0.0.3` |
-| `pandas` | `1.2.4` |
-| `Pillow` | `8.2.0` |
-| `pyarrow` | `3.0.0` |
-| `pyspark` | `3.1.1` |
-| `requests` | `2.24.0` |
-| `s3fs` | `0.6.0` |
-| `scikit-image` | `0.18.1` |
-| `scikit-learn` | `0.24.1` |
-| `scipy` | `1.6.2` |
-| `Scrapy` | `2.5.0` |
-| `seaborn` | `0.11.1` |
-| `spacy` | `3.0.5` |
-| `spacy-legacy` | `3.0.2` |
-| `statsmodels` | `0.12.2` |
-| `tensorboard` | `2.4.1` |
-| `tensorflow` | `2.4.1` |
-| `torch` | `1.8.1+cu111` |
-| `torchaudio` | `0.8.1` |
-| `torchvision` | `0.9.1+cu111` |
-| `xgboost` | `1.4.0` |
+| `pandas` | `1.3.4` |
+| `Pillow` | `8.4.0` |
+| `pyarrow` | `6.0.0` |
+| `pyspark` | `3.2.0` |
+| `requests` | `2.26.0` |
+| `requests-oauthlib` | `1.3.0` |
+| `s3fs` | `0.4.2` |
+| `scikit-image` | `0.18.3` |
+| `scikit-learn` | `1.0.1` |
+| `scipy` | `1.7.2` |
+| `Scrapy` | `2.5.1` |
+| `seaborn` | `0.11.2` |
+| `statsmodels` | `0.13.0` |
+| `tensorboard` | `2.7.0` |
+| `tensorboard-data-server` | `0.6.1` |
+| `tensorboard-plugin-wit` | `1.8.0` |
+| `tensorflow` | `2.7.0` |
+| `tensorflow-estimator` | `2.7.0` |
+| `tensorflow-io-gcs-filesystem` | `0.21.0` |
+| `torch` | `1.10.0+cu113` |
+| `torchaudio` | `0.10.0+cu113` |
+| `torchvision` | `0.11.1+cu113` |
+| `xgboost` | `1.5.0` |
 
 !!! info "NLTK and Spacy Data"
     Additionally the Spacy and NLTK data is included as part of the AMI so you can use

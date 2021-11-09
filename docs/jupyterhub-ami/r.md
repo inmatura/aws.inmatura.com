@@ -18,21 +18,21 @@ data science packages installed out of the box.
 
 | Package | Version |
 | --- | --- |
-| `data.table` | `1.14.0 ` |
-| `dbplyr` | `2.1.1 ` |
-| `devtools` | `2.4.0 ` |
-| `dplyr` | `1.0.5 ` |
-| `ggplot2` | `3.3.3 ` |
-| `IRkernel` | `1.1.1 ` |
-| `keras` | `2.4.0 ` |
-| `odbc` | ` 1.3.2 ` |
-| `packrat` | `  0.6.0 ` |
-| `Rcpp` | ` 1.0.6 ` |
-| `RCurl` | ` 1.98-1.3 ` |
-| `reticulate` | `1.18 ` |
-| `rmarkdown` | `2.7 ` |
-| `shiny` | `1.6.0 ` |
-| `sparklyr` | `1.6.2 ` |
-| `tensorflow` | `2.4.0 ` |
-| `tidymodels` | `0.1.2 ` |
-| `tidyselect` | `1.1.0 ` |
+| `data.table` | `1.14.2` |
+| `dbplyr` | `2.1.1` |
+| `devtools` | `2.4.2` |
+| `dplyr` | `1.0.7` |
+| `ggplot2` | `3.3.5` |
+| `IRkernel` | `1.2` |
+| `keras` | `2.6.2` |
+| `odbc` | `1.3.2` |
+| `packrat` | `0.7.0` |
+| `Rcpp` | `1.0.7` |
+| `RCurl` | `1.98-1.5` |
+| `reticulate` | `1.22` |
+| `rmarkdown` | `2.11` |
+| `shiny` | `1.7.1` |
+| `sparklyr` | `1.7.2` |
+| `tensorflow` | `2.6.0` |
+| `tidymodels` | `0.1.4` |
+| `tidyselect` | `1.1.1` |

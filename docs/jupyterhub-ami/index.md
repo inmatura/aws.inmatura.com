@@ -7,6 +7,8 @@
 The JupyterHub AMI provides a multi-user [JupyterHub](https://jupyterhub.readthedocs.io/en/stable/)
 installation with simple user management that can be launched on any EC2 instance type including GPUs.
 
+Latest version: `2.2`.
+
 Features:
 
 - Immediately start using your JupyterHub installation, no SSH required to launch any services

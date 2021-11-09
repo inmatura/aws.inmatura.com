@@ -4,16 +4,28 @@ The JupyterHub AMI user management is powered by [KeyCloak](https://www.keycloak
 This allows for centralized user management that can be connected to other
 authentication backends such as LDAP.
 
-You can access the KeyCloak management UI at: `http://<ip-address>/auth`.
-Then Click on `Administration Console` and log in using the `admin` username,
-the password will be the EC2 instance ID, for example, `i-0b3445939c749244c`.
+You can access the KeyCloak management UI at the `/auth` path prefix:
+
+```plain title="URL"
+http://<ip-address>/auth
+```
+
+- Click on `Administration Console`
+- Login into the admin UI:
+    - username: `admin`
+    - default password is the EC2 instance ID, for example: `i-0b3445939c749244c`
+
+On the top right corner select the `Jupyterhub` realm.
+
+!!! note "Jupyterhub realm"
+    For a user to be able to login into JupyterHub it must belong to the `jupyterhub` realm.
+
+    The default `jupyterhub-admin` user is located there.
+
 
 ![JupyterHub KeyCloak](/assets/img/jupyterhub-ami/keycloak-realm.png)
 
-For a user to be able to login into JupyterHub it must belong to the `jupyterhub`
-realm. The default `jupyterhub-admin` user is located there.
-
-## Add a user
+## Add an user
 
 To add a new user:
 

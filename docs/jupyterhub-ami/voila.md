@@ -5,7 +5,7 @@ to create dashboards using Jupyter Notebooks.
 
 To use Voila from Jupyter Lab open any notebook and click on the Voila icon.
 
-![Voila](/assets/img/jupyterhub-ami/voila-flex.png)
+![Voila](/assets/img/jupyterhub-ami/voila-example.png)
 
 ## Configure Theme
 
@@ -15,7 +15,7 @@ users home directory and configure Voila:
 ```json title="jupyter_config.json"
 {
     "VoilaConfiguration": {
-        "template": "flex",
+        "template": "<name>",
         "enable_nbextensions": true
     }
 }
