@@ -2,8 +2,8 @@
 
 ## SSH
 
-To change any configuration SSH to the EC2 instance using the public IP address
-of the instance and the keypair selected at launch time.
+To change any configuration in the EC2 instance you can SSH using it's public
+IP address and the keypair selected at launch time.
 The default user is `ubuntu`.
 
 ```shell title="Terminal"
@@ -29,7 +29,7 @@ To set a specific DNS as the access point put the DNS in the
 `/opt/jupyterhub/config/jupyterhub_dns` file. For example:
 
 ```shell title="/opt/jupyterhub/config/jupyterhub_dns"
-myjupyterhub.domain.com
+myjupyterhub.mydomain.com
 ```
 
 Then restart JupyterHub
@@ -38,7 +38,12 @@ Then restart JupyterHub
 sudo systemctl restart jupyterhub
 ```
 
-And can access JupyterHub at `http://myjupyterhub.domain.com`.
+Now access JupyterHub at `http://myjupyterhub.domain.com`.
+
+!!! note "Jupyterhub realm"
+
+    This configuration requires that the subdomain is pointing to the
+    EC2 instance.
 
 ## SSL
 

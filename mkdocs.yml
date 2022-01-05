@@ -5,46 +5,47 @@ copyright: Copyright 2019 - 2021 Daniel Rodriguez
 nav:
   - Home: index.md
   - JupyterHub AMI:
-    - Overview: jupyterhub-ami/index.md
-    - Launch in EC2: jupyterhub-ami/launch-ec2.md
-    - User management: jupyterhub-ami/user-mgmt.md
-    - Configuration: jupyterhub-ami/configuration.md
-    - Terminating: jupyterhub-ami/terminate.md
-    - IDEs:
-      - Jupyter: jupyterhub-ami/jupyter.md
-      - RStudio: jupyterhub-ami/rstudio.md
-      - VS Code: jupyterhub-ami/vscode.md
-    - Languages:
-      - Python: jupyterhub-ami/python.md
-      - R: jupyterhub-ami/r.md
-    - Libraries:
-      - Dask: jupyterhub-ami/dask.md
-      - GPU: jupyterhub-ami/gpu.md
-      - Tensorflow/PyTorch: jupyterhub-ami/tf-th.md
-      - RAPIDS: jupyterhub-ami/rapids.md
-      - Voila: jupyterhub-ami/voila.md
+      - Overview: jupyterhub-ami/index.md
+      - Launch in EC2: jupyterhub-ami/launch-ec2.md
+      - User management: jupyterhub-ami/user-mgmt.md
+      - Configuration: jupyterhub-ami/configuration.md
+      - Terminating: jupyterhub-ami/terminate.md
+      - IDEs:
+          - Jupyter: jupyterhub-ami/jupyter.md
+          - RStudio: jupyterhub-ami/rstudio.md
+          - VS Code: jupyterhub-ami/vscode.md
+      - Languages:
+          - Python: jupyterhub-ami/python.md
+          - R: jupyterhub-ami/r.md
+      - Libraries:
+          - Tensorflow/PyTorch: jupyterhub-ami/tf-th.md
+          - RAPIDS: jupyterhub-ami/rapids.md
+          - GPU: jupyterhub-ami/gpu.md
+          - Dask: jupyterhub-ami/dask.md
+          - Voila: jupyterhub-ami/voila.md
+          - Other versions: jupyterhub-ami/versions.md
   - GPT-2:
-    - Overview: models/gpt-2/index.md
-    - Launch in SageMaker: models/gpt-2/launch.md
-    - API: models/gpt-2/api.md
-    - Examples: models/gpt-2/examples.md
-    - Performance: models/gpt-2/performance.md
-    - Terminating: models/gpt-2/terminate.md
+      - Overview: models/gpt-2/index.md
+      - Launch in SageMaker: models/gpt-2/launch.md
+      - API: models/gpt-2/api.md
+      - Examples: models/gpt-2/examples.md
+      - Performance: models/gpt-2/performance.md
+      - Terminating: models/gpt-2/terminate.md
   - EfficientNet-B3:
-    - Overview: models/efficientnet-b3/index.md
-    - Train an Algorithm in SageMaker: models/efficientnet-b3/train.md
-    - Launch Endpoint - Custom model: models/efficientnet-b3/train-endpoint.md
-    - Launch Endpoint - Base model: models/efficientnet-b3/base-endpoint.md
-    - API: models/efficientnet-b3/api.md
-    - Examples: models/efficientnet-b3/examples.md
-    - Terminating: models/efficientnet-b3/terminate.md
+      - Overview: models/efficientnet-b3/index.md
+      - Train an Algorithm in SageMaker: models/efficientnet-b3/train.md
+      - Launch Endpoint - Custom model: models/efficientnet-b3/train-endpoint.md
+      - Launch Endpoint - Base model: models/efficientnet-b3/base-endpoint.md
+      - API: models/efficientnet-b3/api.md
+      - Examples: models/efficientnet-b3/examples.md
+      - Terminating: models/efficientnet-b3/terminate.md
   - Object Detection Mask R-CNN:
-    - Overview: models/img-obj-mask-r-cnn/index.md
-    - Launch Endpoint: models/img-obj-mask-r-cnn/launch-endpoint.md
-    - API: models/img-obj-mask-r-cnn/api.md
-    - Examples: models/img-obj-mask-r-cnn/examples.md
-    - Performance: models/img-obj-mask-r-cnn/performance.md
-    - Terminating: models/img-obj-mask-r-cnn/terminate.md
+      - Overview: models/img-obj-mask-r-cnn/index.md
+      - Launch Endpoint: models/img-obj-mask-r-cnn/launch-endpoint.md
+      - API: models/img-obj-mask-r-cnn/api.md
+      - Examples: models/img-obj-mask-r-cnn/examples.md
+      - Performance: models/img-obj-mask-r-cnn/performance.md
+      - Terminating: models/img-obj-mask-r-cnn/terminate.md
 
 theme:
   name: material
@@ -58,7 +59,6 @@ theme:
     - navigation.indexes
 
   palette:
-
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
