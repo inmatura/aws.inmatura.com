@@ -18,7 +18,8 @@ You can connect the extension to this cluster using the Dashboard URL:
 ```python
 print("Dashboard:", client.dashboard_link)
 ```
-```
+
+```plain
 Dashboard: /user/jupyterhub-admin/proxy/8787/status
 ```
 
