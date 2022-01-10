@@ -28,7 +28,7 @@ If you are planning to use HTTPS you need to enable it for the JupyterHub servic
 
 1. Create a file name: `/opt/jupyterhub/config/jupyterhub_https`
 
-```shell title="Terminal
+```shell title="Terminal"
 touch /opt/jupyterhub/config/jupyterhub_https
 ```
 
