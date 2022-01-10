@@ -26,9 +26,9 @@ keyFile = "/path/to/certs/traefik.key"
 
 Finally tell the JupyterHub service to use `HTTPS`:
 
-1. Create a file name: `/opt/jupyterhub/config/jupyterhub_https`
+1. Create a file named: `/opt/jupyterhub/config/jupyterhub_https`
 
-```shell title="Terminal
+```shell title="Terminal"
 touch /opt/jupyterhub/config/jupyterhub_https
 ```
 
