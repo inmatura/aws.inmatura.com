@@ -24,8 +24,22 @@ and login as usual.
 
 ## SSL
 
-Depending on the desired DNS configuration you might need to configure
-SSL termination on the EC2 instance. See [SSL](/jupyterhub-ami/ssl)
+If you are planning to use HTTPS you need to enable it for the JupyterHub service:
+
+1. Create a file name: `/opt/jupyterhub/config/jupyterhub_https`
+
+```shell title="Terminal
+touch /opt/jupyterhub/config/jupyterhub_https
+```
+
+2. Restart the JuptyerHub service:
+
+```shell title="Terminal"
+$ /usr/local/bin/jupyterhub-boot.sh
+```
+
+Additionally and depending on the desired DNS configuration you might need to
+configure SSL termination on the EC2 instance, see [SSL](/jupyterhub-ami/ssl).
 
 You can also relax this options on the DNS services. For example on CloudFlare:
 
