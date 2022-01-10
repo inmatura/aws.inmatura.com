@@ -8,8 +8,10 @@ nav:
       - Overview: jupyterhub-ami/index.md
       - Launch in EC2: jupyterhub-ami/launch-ec2.md
       - User management: jupyterhub-ami/user-mgmt.md
-      - Configuration: jupyterhub-ami/configuration.md
-      - Support: support.md
+      - Server Management: jupyterhub-ami/management.md
+      - Custom DNS: jupyterhub-ami/dns.md
+      - SSL: jupyterhub-ami/ssl.md
+      - Support: jupyterhub-ami/support.md
       - Terminating: jupyterhub-ami/terminate.md
       - IDEs:
           - Jupyter: jupyterhub-ami/jupyter.md
@@ -31,7 +33,6 @@ nav:
       - API: models/gpt-2/api.md
       - Examples: models/gpt-2/examples.md
       - Performance: models/gpt-2/performance.md
-      - Support: support.md
       - Terminating: models/gpt-2/terminate.md
   - EfficientNet-B3:
       - Overview: models/efficientnet-b3/index.md
@@ -40,7 +41,6 @@ nav:
       - Launch Endpoint - Base model: models/efficientnet-b3/base-endpoint.md
       - API: models/efficientnet-b3/api.md
       - Examples: models/efficientnet-b3/examples.md
-      - Support: support.md
       - Terminating: models/efficientnet-b3/terminate.md
   - Object Detection Mask R-CNN:
       - Overview: models/img-obj-mask-r-cnn/index.md
@@ -48,7 +48,6 @@ nav:
       - API: models/img-obj-mask-r-cnn/api.md
       - Examples: models/img-obj-mask-r-cnn/examples.md
       - Performance: models/img-obj-mask-r-cnn/performance.md
-      - Support: support.md
       - Terminating: models/img-obj-mask-r-cnn/terminate.md
 
 theme:
@@ -66,8 +65,8 @@ theme:
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
+      primary: red
+      accent: deep orange
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
