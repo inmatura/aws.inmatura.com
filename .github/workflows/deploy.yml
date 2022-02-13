@@ -59,15 +59,7 @@ jobs:
           source .venv/bin/activate
           make build
 
-      - name: Push docs (branch)
-        uses: jsmrcaga/action-netlify-deploy@v1.6.0
-        if: github.event_name == 'pull_request_target'
-        with:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          build_directory: site
-
-      - name: Push docs (main)
+      - name: Push docs to Netlify (prod)
         uses: jsmrcaga/action-netlify-deploy@v1.6.0
         if: (github.event_name == 'push') && endsWith(github.ref, '/main')
         with:
@@ -76,9 +68,17 @@ jobs:
           NETLIFY_DEPLOY_TO_PROD: true
           build_directory: site
 
-      - name: Upload docs
+      - name: Push docs to Netlify (preview)
+        uses: jsmrcaga/action-netlify-deploy@v1.6.0
+        if: github.event_name == 'pull_request_target'
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          build_directory: site
+
+      - name: Upload artifact to GitHub
         uses: actions/upload-artifact@v1
-        if: always()
+        if: failure()
         with:
           name: docs
           path: site
