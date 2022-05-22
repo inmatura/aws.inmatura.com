@@ -10,57 +10,36 @@ jobs:
   docs:
     runs-on: ubuntu-20.04
 
-    strategy:
-      matrix:
-        python-version: [3.9]
+    defaults:
+      run:
+        shell: bash -l {0}
 
     steps:
       - uses: actions/checkout@v2
-      - run: git fetch --prune --unshallow
 
-      - name: Setup Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+      - name: Install Task
+        uses: arduino/setup-task@v1
+
+      - name: Install Conda environment with Micromamba
+        uses: mamba-org/provision-with-micromamba@main
         with:
-          python-version: ${{ matrix.python-version }}
-
-      - name: Install Poetry
-        uses: snok/install-poetry@v1
-        with:
-          version: 1.2.0a2
-          virtualenvs-create: true
-          virtualenvs-in-project: true
-
-      - name: Load cached venv
-        id: cached-poetry-dependencies
-        uses: actions/cache@v2
-        with:
-          path: .venv
-          key: venv-${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('**/pyproject.toml', '**/requirements*.txt') }}
-
-      - name: Ensure cache is healthy
-        if: steps.cached-poetry-dependencies.outputs.cache-hit == 'true'
-        shell: bash
-        run: poetry run python --version || rm -rf .venv
-
-      - name: Install Python dependencies
-        run: |
-          poetry install --no-interaction --no-root
+          cache-env: true
 
       - name: Print Python versions
         run: |
-          source .venv/bin/activate
+          which micromamba
+          micromamba info
           which python
-          which pip
           python --version
+          which pip
           pip --version
 
       - name: Build docs
         run: |
-          source .venv/bin/activate
-          make build
+          task docs
 
       # ------------------------------------------------------------------------
-      # Release
+      # Upload to Netlify
 
       - name: Preview - Upload to Netlify
         if: github.event_name == 'pull_request'

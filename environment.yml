@@ -1,0 +1,10 @@
+name: extrapolations.dev
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.9,<4
+  - pip
+  - mkdocs>=1.3.0
+  - mkdocs-material>=8.2.15
+  - pip:
+      - mkdocs-jupyter

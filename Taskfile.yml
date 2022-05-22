@@ -1,0 +1,10 @@
+version: "3"
+
+tasks:
+  serve:
+    cmds:
+      - mkdocs serve
+
+  docs:
+    cmds:
+      - mkdocs build
