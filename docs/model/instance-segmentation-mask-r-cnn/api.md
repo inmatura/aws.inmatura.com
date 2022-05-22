@@ -1,4 +1,4 @@
-# Object Detection Mask R-CNN model: API
+# Instance segmentation Mask R-CNN model: API
 
 The model Endpoint accepts an image `Content-Type` of: `image/jpeg` or `image/png`.
 
@@ -9,7 +9,7 @@ The reponse type can be controlled by the `Accept` or [`Custom Attributes` heade
 
 Example image `horse-guard.jpg`:
 
-![Horse Guard](/assets/images/model/img-obj-mask-r-cnn/horse-guard.jpg){width=300px}
+![Horse Guard](/assets/images/model/instance-segmentation-mask-r-cnn/horse-guard.jpg){width=300px}
 
 === "Python (boto3) - JPEG"
 
@@ -21,7 +21,7 @@ Example image `horse-guard.jpg`:
     import boto3
 
     client = boto3.client("sagemaker-runtime")
-    endpoint_name = "img-obj-mask-r-cnn"
+    endpoint_name = "instance-segmentation-mask-r-cnn"
 
     # Read image
     with open("horse-guard.jpg", "rb") as f:
@@ -43,7 +43,7 @@ Example image `horse-guard.jpg`:
         f.write(response["Body"].read())
     ```
 
-    ![Horses](/assets/images/model/img-obj-mask-r-cnn/horse-guard.segmented.jpg){width=600px}
+    ![Horses](/assets/images/model/instance-segmentation-mask-r-cnn/horse-guard.segmented.jpg){width=600px}
 
 === "Python (boto3) - JSON"
 
@@ -55,7 +55,7 @@ Example image `horse-guard.jpg`:
     import boto3
 
     client = boto3.client("sagemaker-runtime")
-    endpoint_name = "img-obj-mask-r-cnn"
+    endpoint_name = "instance-segmentation-mask-r-cnn"
 
     # Read image
     with open("validation/horse-guard.jpg", "rb") as f:
@@ -103,7 +103,7 @@ Example image `horse-guard.jpg`:
 
     ```
     aws sagemaker-runtime invoke-endpoint \
-        --endpoint-name img-obj-mask-r-cnn \
+        --endpoint-name instance-segmentation-mask-r-cnn \
         --accept application/json \
         --content-type image/jpeg \
         --body fileb://./horse-guard.jpg >(cat)
@@ -114,7 +114,7 @@ Example image `horse-guard.jpg`:
     In `cURL` it will be like doing doing:
 
     ```
-    curl -X POST "https://runtime.sagemaker.us-east-1.amazonaws.com/endpoints/img-obj-mask-r-cnn/invocations" \
+    curl -X POST "https://runtime.sagemaker.us-east-1.amazonaws.com/endpoints/instance-segmentation-mask-r-cnn/invocations" \
       -H "Accept: application/json" \
       -H "Content-Type: image/jpeg" \
       --data-binary "@horse-guard.jpg"

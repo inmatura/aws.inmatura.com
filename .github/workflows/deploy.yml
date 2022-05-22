@@ -10,13 +10,12 @@ jobs:
   docs:
     runs-on: ubuntu-20.04
 
-    strategy:
-      matrix:
-        python-version: [3.9]
+    defaults:
+      run:
+        shell: bash -l {0}
 
     steps:
       - uses: actions/checkout@v2
-      - run: git fetch --prune --unshallow
 
       - name: Install Task
         uses: arduino/setup-task@v1
@@ -28,17 +27,19 @@ jobs:
 
       - name: Print Python versions
         run: |
+          which micromamba
+          micromamba info
           which python
-          which pip
           python --version
+          which pip
           pip --version
 
       - name: Build docs
         run: |
-          task build
+          task docs
 
       # ------------------------------------------------------------------------
-      # Release
+      # Upload to Netlify
 
       - name: Preview - Upload to Netlify
         if: github.event_name == 'pull_request'

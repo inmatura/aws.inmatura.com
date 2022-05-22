@@ -8,4 +8,4 @@ Here you will find documentation for the various products offered in the
 | Product | Description | Link |
 | --- | ---- | --- |
 | [JupyterHub AMI](/ami/jupyterhub) | Ready to use multi-user JupyterHub installation | [Launch on EC2](https://aws.amazon.com/marketplace/pp/Daniel-Rodriguez-JupyterHub-multi-user-single-node/B07YSYZ2P6) |
-| [Instance segmentation - Mask R- CNN](/model/instance-segmentation-mask-r-cnn) | State of the art object detection and instance segmentation | [Launch on SageMaker]() |
+| [Instance segmentation - Mask R- CNN](/model/instance-segmentation-mask-r-cnn) | State of the art Instance segmentation and instance segmentation | [Launch on SageMaker]() |

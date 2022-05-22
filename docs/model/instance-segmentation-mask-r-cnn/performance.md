@@ -1,4 +1,4 @@
-# Object Detection Mask R-CNN: Performance
+# Instance segmentation Mask R-CNN: Performance
 
 The model supports both CPU and GPU in instance types.
 Depending on the instance type selected the inference time might vary considerably. The recommended approach is to use an instance with a GPU.

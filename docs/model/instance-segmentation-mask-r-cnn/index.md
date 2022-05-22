@@ -1,7 +1,7 @@
 # Instance Segmentation Mask R-CNN
 
 The [Instance Segmentation Mask R-CNN model](https://aws.amazon.com/marketplace/pp/prodview-dxs3ysuie4q5m)
-provides state of the art object detection and instance segmentation on images with fast inference times.
+provides state of the art Instance segmentation and instance segmentation on images with fast inference times.
 
 ![](/assets/images/model/instance-segmentation-mask-r-cnn/cars.segmented.jpg)
 

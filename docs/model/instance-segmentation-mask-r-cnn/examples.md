@@ -1,12 +1,12 @@
-# Object Detection Mask R-CNN model: Examples
+# Instance segmentation Mask R-CNN model: Examples
 
 These are example predictions for the model, images are from the [COCO Dataset](https://cocodataset.org/).
 
 === "horse-guard.jpg"
 
-    ![Horse with Guard](/assets/images/model/img-obj-mask-r-cnn/horse-guard.jpg){width=550px}
+    ![Horse with Guard](/assets/images/model/instance-segmentation-mask-r-cnn/horse-guard.jpg){width=550px}
 
-    ![Horse with Guard Segmented](/assets/images/model/img-obj-mask-r-cnn/horse-guard.segmented.jpg){width=550px}
+    ![Horse with Guard Segmented](/assets/images/model/instance-segmentation-mask-r-cnn/horse-guard.segmented.jpg){width=550px}
 
     JSON outputs:
 
@@ -31,9 +31,9 @@ These are example predictions for the model, images are from the [COCO Dataset](
 
 === "cat-fruits.jpg"
 
-    ![Cat and Fruis](/assets/images/model/img-obj-mask-r-cnn/cat-fruits.jpg){width=550px}
+    ![Cat and Fruis](/assets/images/model/instance-segmentation-mask-r-cnn/cat-fruits.jpg){width=550px}
 
-    ![Cat and Fruis Segmented](/assets/images/model/img-obj-mask-r-cnn/cat-fruits.segmented.jpg){width=550px}
+    ![Cat and Fruis Segmented](/assets/images/model/instance-segmentation-mask-r-cnn/cat-fruits.segmented.jpg){width=550px}
 
     JSON outputs:
 
@@ -56,9 +56,9 @@ These are example predictions for the model, images are from the [COCO Dataset](
 
 === "cars.jpg"
 
-    ![Cars](/assets/images/model/img-obj-mask-r-cnn/cars.jpg){width=550px}
+    ![Cars](/assets/images/model/instance-segmentation-mask-r-cnn/cars.jpg){width=550px}
 
-    ![Cars Segmented](/assets/images/model/img-obj-mask-r-cnn/cars.segmented.jpg){width=550px}
+    ![Cars Segmented](/assets/images/model/instance-segmentation-mask-r-cnn/cars.segmented.jpg){width=550px}
 
     JSON outputs:
 
@@ -89,9 +89,9 @@ These are example predictions for the model, images are from the [COCO Dataset](
 
 === "apartment.jpg"
 
-    ![Apartmentt](/assets/images/model/img-obj-mask-r-cnn/apartment.jpg){width=550px}
+    ![Apartmentt](/assets/images/model/instance-segmentation-mask-r-cnn/apartment.jpg){width=550px}
 
-    ![Apartmentt Segmented](/assets/images/model/img-obj-mask-r-cnn/apartment.segmented.jpg){width=550px}
+    ![Apartmentt Segmented](/assets/images/model/instance-segmentation-mask-r-cnn/apartment.segmented.jpg){width=550px}
 
     JSON outputs:
 
@@ -128,9 +128,9 @@ These are example predictions for the model, images are from the [COCO Dataset](
 
 === "dog-birds.jpg"
 
-    ![Dog and Birds](/assets/images/model/img-obj-mask-r-cnn/dog-birds.jpg){width=550px}
+    ![Dog and Birds](/assets/images/model/instance-segmentation-mask-r-cnn/dog-birds.jpg){width=550px}
 
-    ![Dog and Birds Segmented](/assets/images/model/img-obj-mask-r-cnn/dog-birds.segmented.jpg){width=550px}
+    ![Dog and Birds Segmented](/assets/images/model/instance-segmentation-mask-r-cnn/dog-birds.segmented.jpg){width=550px}
 
     JSON outputs:
 
@@ -153,9 +153,9 @@ These are example predictions for the model, images are from the [COCO Dataset](
 
 === "hot-dog-stand.png"
 
-    ![Hot Dog Stand](/assets/images/model/img-obj-mask-r-cnn/hot-dog-stand.png){width=550px}
+    ![Hot Dog Stand](/assets/images/model/instance-segmentation-mask-r-cnn/hot-dog-stand.png){width=550px}
 
-    ![Hot Dog Stand Segmented](/assets/images/model/img-obj-mask-r-cnn/hot-dog-stand.segmented.png){width=550px}
+    ![Hot Dog Stand Segmented](/assets/images/model/instance-segmentation-mask-r-cnn/hot-dog-stand.segmented.png){width=550px}
 
     JSON outputs:
 

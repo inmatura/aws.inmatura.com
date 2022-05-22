@@ -1,16 +1,15 @@
-# Deploy an Endpoint for Object detection Mask R-CNN
+# Deploy an Endpoint for Instance segmentation Mask R-CNN
 
 ## 1. Subscribe to the offering
 
 1. Log in to AWS with a user with administrative privileges
 1. Navigate to the
-[Object Detection Mask R-CNN](https://aws.amazon.com/marketplace/pp/prodview-dxs3ysuie4q5m)
+[Instance segmentation Mask R-CNN](https://aws.amazon.com/marketplace/pp/prodview-dxs3ysuie4q5m)
 listing on the AWS Marketplace
 1. Click `Continue to Subscribe`
 1. Click on `Accept offer` (it might take 1 or 2 minutes for AWS to accept the offer)
-
-    Note that there is no charge for subscribing to this offering only when launching the Endpoint on SageMaker.
-
+    - Note that there is no charge for subscribing to this offering
+    - Billing starts only when launching a Model Endpoint on SageMaker
 1. Once you are subscribed click `Continue to Configuration`
 1. On the `Configure and launch` page
     1. Select `SageMaker console` as the Launch Method (you can also use the AWS CLI)
@@ -22,15 +21,15 @@ listing on the AWS Marketplace
 
 In the `Create endpoint` page:
 
-1. Select a `Model name` e.g. `img-obj-mask-r-cnn`
+1. Select a `Model name` e.g. `my-instance-segmentation`
 1. Select or create a new IAM role for executing the model
 1. Under `Container definition`
     1. Verify `Use a model package subscription from AWS Marketplace` is selected
 1. Click on `Next`
-1. Select an `Endpoint name` e.g. `img-obj-mask-r-cnn`
+1. Select an `Endpoint name` e.g. `my-instance-segmentation`
 1. Under `Attach endpoint configuration` select `Create a new endpoint configuration`
 1. Under `New endpoint configuration`
-    1. Verify the new model (e.g. `img-obj-mask-r-cnn`) is listed under `Production variants`
+    1. Verify the new model (e.g. `my-instance-segmentation`) is listed under `Production variants`
     1. Click on `Edit` in the `Actions` column and select the instance types you want for the endpoint. The minimun recommended is `ml.c5.xlarge`
     1. Click on `Create endpoint configuration`
 1. Finally click on `Submit`
@@ -44,7 +43,7 @@ A new endpoint will be created (this can take a couple of minutes):
 With the endpoint ready you will have an URL to make predictions, for example:
 
 ```
-https://runtime.sagemaker.us-east-1.amazonaws.com/endpoints/img-obj-mask-r-cnn/invocations
+https://runtime.sagemaker.us-east-1.amazonaws.com/endpoints/instance-segmentation-mask-r-cnn/invocations
 ```
 
 !!! info "How to query this Endpoint"
@@ -56,7 +55,7 @@ https://runtime.sagemaker.us-east-1.amazonaws.com/endpoints/img-obj-mask-r-cnn/i
 
 A simple example using `boto` and this photo as input:
 
-![Horses](/assets/images/model/img-obj-mask-r-cnn/horse-guard.jpg){width=600px}
+![Horses](/assets/images/model/instance-segmentation-mask-r-cnn/horse-guard.jpg){width=600px}
 
 ```python
 import boto3
@@ -84,10 +83,10 @@ with open("validation/horse-guard.segmented.jpg", "wb") as f:
 
 Response:
 
-![Horses](/assets/images/model/img-obj-mask-r-cnn/horse-guard.segmented.jpg){width=600px}
+![Horses](/assets/images/model/instance-segmentation-mask-r-cnn/horse-guard.segmented.jpg){width=600px}
 
 
 !!! info "Full API docs"
     For the complete documentation of the API including the different inputs and responses
-    and more ways to query the Invocations endpoint see the [API page](/models/img-obj-mask-r-cnn/api).
+    and more ways to query the Invocations endpoint see the [API page](/models/instance-segmentation-mask-r-cnn/api).
 
