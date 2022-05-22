@@ -49,7 +49,7 @@ https://runtime.sagemaker.us-east-1.amazonaws.com/endpoints/gpt-2/invocations
 ```
 
 --8<--
-docs/models/snippets/info-how-to-query.md
+docs/model/snippets/info-how-to-query.md
 --8<--
 
 ### Insonmia
@@ -82,4 +82,4 @@ With a response like this:
 
 !!! info "Full API docs"
     For the complete documentation of the API including the different inputs and responses
-    and more ways to query the Invocations endpoint see the [API page](/models/gpt-2/api).
+    and more ways to query the Invocations endpoint see the [API page](/model/gpt-2/api).

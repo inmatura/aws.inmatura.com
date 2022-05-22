@@ -1,6 +1,6 @@
 # Deploy an endpoint for a custom EfficientNet model
 
-[Once a custom model has been trained](/models/efficientnet-b3/train)
+[Once a custom model has been trained](/model/efficientnet-b3/train)
 it's possible to create a SageMaker Endpoint to make inferences on new data.
 
 ## 1. Create Model Package
@@ -63,7 +63,7 @@ https://runtime.sagemaker.us-east-1.amazonaws.com/endpoints/ants-and-bees/invoca
 ```
 
 --8<--
-docs/models/snippets/info-how-to-query.md
+docs/model/snippets/info-how-to-query.md
 --8<--
 
 As a quick example let's use these two images:
@@ -132,5 +132,5 @@ Querying the endpoint:
 
 !!! info "Full API docs"
     For the complete documentation of the API including the different inputs and responses
-    and more ways to query the Invocations endpoint see the [API page](/models/efficientnet-b3/api).
+    and more ways to query the Invocations endpoint see the [API page](/model/efficientnet-b3/api).
 

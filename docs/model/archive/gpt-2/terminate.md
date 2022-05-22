@@ -1,3 +1,3 @@
 --8<--
-docs/models/snippets/terminate.md
+docs/model/snippets/terminate.md
 --8<--

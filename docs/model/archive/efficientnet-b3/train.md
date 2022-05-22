@@ -80,7 +80,7 @@ A new `Training Job` will be created. Note that based on the data and hyperparam
 it might take a while for this job to finish.
 
 After the job is finished you can
-[deploy a new endpoint for the custom trained trained model](/models/efficientnet-b3/train-endpoint).
+[deploy a new endpoint for the custom trained trained model](/model/efficientnet-b3/train-endpoint).
 
 ## Output
 

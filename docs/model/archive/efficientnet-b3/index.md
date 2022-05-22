@@ -21,9 +21,9 @@ Features:
 - Only pay for what you use with a simple metered pricing model
 - Same price independent of the resources (`memory/cpu/gpu`) used
 
-Learn how to how to [train a custom model](/models/efficientnet-b3/train),
-[launch this model in AWS SageMaker](/models/efficientnet-b3/getting-started),
-see [examples](/models/efficientnet-b3/examples) from the base model.
+Learn how to how to [train a custom model](/model/efficientnet-b3/train),
+[launch this model in AWS SageMaker](/model/efficientnet-b3/getting-started),
+see [examples](/model/efficientnet-b3/examples) from the base model.
 
 ## Pricing
 

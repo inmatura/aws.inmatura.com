@@ -1,15 +1,18 @@
-# Instance segmentation Mask R-CNN model: API
+# Instance segmentation Mask R-CNN: API
 
-The model Endpoint accepts an image `Content-Type` of: `image/jpeg` or `image/png`.
+The `/invocations` endpoint accepts `Content-Type` of: `image/jpeg` or `image/png`.
 
-The response image will be the same input image with labels and boxes around the detected objects.
-Optionally it can return just a JSON object with the labels and coordinates of the detected objects.
+The response can be an image with the instance segmentation mask or a JSON object.
+This is controlled by the `Accept` header or the
+[`AWS Custom Attributes` header](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax).
 
-The reponse type can be controlled by the `Accept` or [`Custom Attributes` header](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax) headers.
+## Examples
 
 Example image `horse-guard.jpg`:
 
-![Horse Guard](/assets/images/model/instance-segmentation-mask-r-cnn/horse-guard.jpg){width=300px}
+<figure markdown>
+  ![Instance Segmentation Example](/assets/images/model/instance-segmentation-mask-r-cnn/examples/horse-guard.jpg){width=300px}
+</figure>
 
 === "Python (boto3) - JPEG"
 
@@ -21,7 +24,7 @@ Example image `horse-guard.jpg`:
     import boto3
 
     client = boto3.client("sagemaker-runtime")
-    endpoint_name = "instance-segmentation-mask-r-cnn"
+    endpoint_name = "my-instance-segmentation"
 
     # Read image
     with open("horse-guard.jpg", "rb") as f:
@@ -41,9 +44,12 @@ Example image `horse-guard.jpg`:
     # Write segmented output image
     with open("horse-guard.segmented.jpg", "wb") as f:
         f.write(response["Body"].read())
+
     ```
 
-    ![Horses](/assets/images/model/instance-segmentation-mask-r-cnn/horse-guard.segmented.jpg){width=600px}
+    <figure markdown>
+    ![Instance Segmentation Example](/assets/images/model/instance-segmentation-mask-r-cnn/examples/horse-guard.segmented.jpg){width=500px}
+    </figure>
 
 === "Python (boto3) - JSON"
 
@@ -55,10 +61,10 @@ Example image `horse-guard.jpg`:
     import boto3
 
     client = boto3.client("sagemaker-runtime")
-    endpoint_name = "instance-segmentation-mask-r-cnn"
+    endpoint_name = "my-instance-segmentation"
 
     # Read image
-    with open("validation/horse-guard.jpg", "rb") as f:
+    with open("./validation/horse-guard.jpg", "rb") as f:
         payload = bytearray(f.read())
 
     # Make request
@@ -67,15 +73,16 @@ Example image `horse-guard.jpg`:
 
     response = client.invoke_endpoint(
         EndpointName=endpoint_name,
-        CustomAttributes=custom_attributes
         ContentType=content_type,
         Body=payload,
+        CustomAttributes=custom_attributes,
     )
 
-    # Parse and print output image
+    # Parse response
     import json
 
     print(json.loads(response["Body"].read()))
+
     ```
 
     ```json
@@ -103,7 +110,7 @@ Example image `horse-guard.jpg`:
 
     ```
     aws sagemaker-runtime invoke-endpoint \
-        --endpoint-name instance-segmentation-mask-r-cnn \
+        --endpoint-name my-instance-segmentation \
         --accept application/json \
         --content-type image/jpeg \
         --body fileb://./horse-guard.jpg >(cat)
@@ -114,7 +121,7 @@ Example image `horse-guard.jpg`:
     In `cURL` it will be like doing doing:
 
     ```
-    curl -X POST "https://runtime.sagemaker.us-east-1.amazonaws.com/endpoints/instance-segmentation-mask-r-cnn/invocations" \
+    curl -X POST "https://runtime.sagemaker.us-east-1.amazonaws.com/endpoints/my-instance-segmentation/invocations" \
       -H "Accept: application/json" \
       -H "Content-Type: image/jpeg" \
       --data-binary "@horse-guard.jpg"
@@ -123,18 +130,17 @@ Example image `horse-guard.jpg`:
     Note that this command requires modification to authenticate the request using
     [AWS Signature Version 4](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html)
 
-
 ## Response
 
-The API Reponse is based on the `Accept` header of the request:
+The endpoint response is based on the `Accept` header of the request:
 
 1. `image/jpeg`: Segmented image in JPEG format
 1. `image/png`: Segmented image in PNG format
-1. `application/json`: JSON object with the metadata of the objects founds
+1. `application/json`: JSON object with the metadata of the objects found
 
 The JSON object has the following structure:
 
-```json
+```json title="JSON response metadata"
 {
     "labels": ["<label 1> <probability>", "<label 2> probability", ...],
     "boxes": [
@@ -154,14 +160,18 @@ The API uses the
 [`AWS Custom-Attributes` header](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html)
 from SageMaker to control the parameters and output of the model.
 
-This header should be `JSON` formated string with the different values for the parameters.
+This header should be `JSON` formatted string with the different values for the parameters.
 
 | Param | Default | Description |
 |---|---|---|
 | `response_type` | `""` `(str)` | Response type. One of: `jpeg`, `png`, `json`. (Same as the Accept header). |
 
-Example
+```title="Example Custom Attributes"
+X-Amzn-SageMaker-Custom-Attributes: {"response_type": "json"}
+```
 
-```
-X-Amzn-SageMaker-Custom-Attributes: {"top_k": 1}
-```
+## Postman Collection
+
+We provide a Postman collection with an example requests
+[here](https://www.postman.com/danielfrg/workspace/extrapolations-dev/collection/17206474-c600a3ef-3578-4292-94dd-a5b0a8b9806b?action=share&creator=17206474).
+

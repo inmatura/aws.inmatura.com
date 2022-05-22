@@ -34,21 +34,6 @@ nav:
       - Examples: model/instance-segmentation-mask-r-cnn/examples.md
       - Performance: model/instance-segmentation-mask-r-cnn/performance.md
       - Terminating: model/instance-segmentation-mask-r-cnn/terminate.md
-  - GPT-2:
-      - Overview: model/gpt-2/index.md
-      - Launch in SageMaker: model/gpt-2/launch.md
-      - API: model/gpt-2/api.md
-      - Examples: model/gpt-2/examples.md
-      - Performance: model/gpt-2/performance.md
-      - Terminating: model/gpt-2/terminate.md
-  - EfficientNet-B3:
-      - Overview: model/efficientnet-b3/index.md
-      - Train an Algorithm in SageMaker: model/efficientnet-b3/train.md
-      - Launch Endpoint - Custom model: model/efficientnet-b3/train-endpoint.md
-      - Launch Endpoint - Base model: model/efficientnet-b3/base-endpoint.md
-      - API: model/efficientnet-b3/api.md
-      - Examples: model/efficientnet-b3/examples.md
-      - Terminating: model/efficientnet-b3/terminate.md
 
 theme:
   name: material
@@ -87,10 +72,14 @@ markdown_extensions:
   - md_in_html
   - admonition
   - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.highlight:
       anchor_linenums: true
       auto_title: true
+  - pymdownx.tabbed:
+      alternate_style: true
   - toc:
       permalink: true
 

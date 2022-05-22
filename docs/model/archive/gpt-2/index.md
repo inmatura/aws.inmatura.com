@@ -12,8 +12,8 @@ Features:
 - Only pay for what you use with a simple metered pricing model
 - Same price independent of the resources (`memory/cpu/gpu`) used
 
-Learn how to [launch this algorithm in AWS SageMaker](/models/gpt-2/getting-started)
-and see [examples](/models/gpt-2/examples) from the actual API.
+Learn how to [launch this algorithm in AWS SageMaker](/model/gpt-2/getting-started)
+and see [examples](/model/gpt-2/examples) from the actual API.
 
 ## Pricing
 

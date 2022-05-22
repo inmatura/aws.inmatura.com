@@ -4,7 +4,7 @@ The base [EfficientNet model](https://aws.amazon.com/marketplace/pp/prodview-b4j
 provides image classification on the 1000 ImageNet labels.
 
 !!! info "Custom model"
-    To create a custom model to classify images in based in custom labels see [the Training page](/models/efficientnet-b3/train).
+    To create a custom model to classify images in based in custom labels see [the Training page](/model/efficientnet-b3/train).
 
 ## 1. Subscribe to the offering
 
@@ -54,7 +54,7 @@ https://runtime.sagemaker.us-east-1.amazonaws.com/endpoints/efficientnet-b3/invo
 ```
 
 --8<--
-docs/models/snippets/info-how-to-query.md
+docs/model/snippets/info-how-to-query.md
 --8<--
 
 A simple example using `boto` and this photo as input:
@@ -92,5 +92,5 @@ Response:
 
 !!! info "Full API docs"
     For the complete documentation of the API including the different inputs and responses
-    and more ways to query the Invocations endpoint see the [API page](/models/efficientnet-b3/api).
+    and more ways to query the Invocations endpoint see the [API page](/model/efficientnet-b3/api).
 
