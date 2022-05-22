@@ -28,7 +28,6 @@ jobs:
 
       - name: Print Python versions
         run: |
-          source .venv/bin/activate
           which python
           which pip
           python --version
@@ -36,7 +35,6 @@ jobs:
 
       - name: Build docs
         run: |
-          source .venv/bin/activate
           task build
 
       # ------------------------------------------------------------------------
