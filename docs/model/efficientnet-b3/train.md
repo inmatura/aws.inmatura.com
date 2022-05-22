@@ -105,7 +105,7 @@ The training job outputs 4 models metrics to keep track of the performance while
 | `validation:acc_1` | Accuracy on the top-1 label |
 | `validation:acc_5` | Accuracy on the top-5 labels |
 
-![Metrics](/assets/img/models/efficientnet-b3/metrics.png)
+![Metrics](/assets/images/model/efficientnet-b3/metrics.png)
 
 ## Common Errors
 

@@ -26,7 +26,7 @@ Copy the public IP address and open it in a browser and you should now see the J
     while it's configuring the services and creating the first user.
     Also, be sure to use `HTTP` and not `HTTPS`.
 
-![JupyterHub login](/assets/img/jupyterhub-ami/jupyterhub-login.png)
+![JupyterHub login](/assets/images/ami/jupyterhub/jupyterhub-login.png)
 
 ## Accessing JupyterHub
 
@@ -36,9 +36,9 @@ can log in to JupyterHub using the default user:
 - Username: `jupyterhub-admin`
 - Password: Instance ID of the EC2 instance, for example `i-0b3445939c749244c`
 
-![KeyCloak login](/assets/img/jupyterhub-ami/keycloak-login.png)
+![KeyCloak login](/assets/images/ami/jupyterhub/keycloak-login.png)
 
 You will now be redirected to JupyterHub and your Jupyter session will start,
 you will now see the Jupyter Lab UI.
 
-![Jupyter Lab](/assets/img/jupyterhub-ami/jupyter-lab.png)
+![Jupyter Lab](/assets/images/ami/jupyterhub/jupyter-lab.png)

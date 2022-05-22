@@ -1,108 +1,96 @@
 site_name: Extrapolations Docs
 site_url: https://docs.extrapolations.dev
-copyright: Copyright 2019 - 2021 Daniel Rodriguez
+copyright: Copyright 2019 - 2022 Daniel Rodriguez
 
 nav:
   - Home: index.md
   - JupyterHub AMI:
-      - Overview: jupyterhub-ami/index.md
-      - Launch in EC2: jupyterhub-ami/launch-ec2.md
-      - User management: jupyterhub-ami/user-mgmt.md
-      - Server Management: jupyterhub-ami/management.md
-      - Custom DNS: jupyterhub-ami/dns.md
-      - SSL: jupyterhub-ami/ssl.md
-      - Support: jupyterhub-ami/support.md
-      - Terminating: jupyterhub-ami/terminate.md
+      - Overview: ami/jupyterhub/index.md
+      - Launch in EC2: ami/jupyterhub/launch-ec2.md
+      - User management: ami/jupyterhub/user-mgmt.md
+      - Server Management: ami/jupyterhub/management.md
+      - Custom DNS: ami/jupyterhub/dns.md
+      - SSL: ami/jupyterhub/ssl.md
+      - Support: ami/jupyterhub/support.md
+      - Terminating: ami/jupyterhub/terminate.md
       - IDEs:
-          - Jupyter: jupyterhub-ami/jupyter.md
-          - RStudio: jupyterhub-ami/rstudio.md
-          - VS Code: jupyterhub-ami/vscode.md
+          - Jupyter: ami/jupyterhub/jupyter.md
+          - RStudio: ami/jupyterhub/rstudio.md
+          - VS Code: ami/jupyterhub/vscode.md
       - Languages:
-          - Python: jupyterhub-ami/python.md
-          - R: jupyterhub-ami/r.md
+          - Python: ami/jupyterhub/python.md
+          - R: ami/jupyterhub/r.md
       - Libraries:
-          - Tensorflow/PyTorch: jupyterhub-ami/tf-th.md
-          - RAPIDS: jupyterhub-ami/rapids.md
-          - GPU: jupyterhub-ami/gpu.md
-          - Dask: jupyterhub-ami/dask.md
-          - Voila: jupyterhub-ami/voila.md
-          - Other versions: jupyterhub-ami/versions.md
+          - Tensorflow/PyTorch: ami/jupyterhub/tf-th.md
+          - RAPIDS: ami/jupyterhub/rapids.md
+          - GPU: ami/jupyterhub/gpu.md
+          - Dask: ami/jupyterhub/dask.md
+          - Voila: ami/jupyterhub/voila.md
+          - Other versions: ami/jupyterhub/versions.md
+  - Instance Segmentation Mask R-CNN:
+      - Overview: model/instance-segmentation-mask-r-cnn/index.md
+      - Launch Model Endpoint: model/instance-segmentation-mask-r-cnn/launch-endpoint.md
+      - API: model/instance-segmentation-mask-r-cnn/api.md
+      - Examples: model/instance-segmentation-mask-r-cnn/examples.md
+      - Performance: model/instance-segmentation-mask-r-cnn/performance.md
+      - Terminating: model/instance-segmentation-mask-r-cnn/terminate.md
   - GPT-2:
-      - Overview: models/gpt-2/index.md
-      - Launch in SageMaker: models/gpt-2/launch.md
-      - API: models/gpt-2/api.md
-      - Examples: models/gpt-2/examples.md
-      - Performance: models/gpt-2/performance.md
-      - Terminating: models/gpt-2/terminate.md
+      - Overview: model/gpt-2/index.md
+      - Launch in SageMaker: model/gpt-2/launch.md
+      - API: model/gpt-2/api.md
+      - Examples: model/gpt-2/examples.md
+      - Performance: model/gpt-2/performance.md
+      - Terminating: model/gpt-2/terminate.md
   - EfficientNet-B3:
-      - Overview: models/efficientnet-b3/index.md
-      - Train an Algorithm in SageMaker: models/efficientnet-b3/train.md
-      - Launch Endpoint - Custom model: models/efficientnet-b3/train-endpoint.md
-      - Launch Endpoint - Base model: models/efficientnet-b3/base-endpoint.md
-      - API: models/efficientnet-b3/api.md
-      - Examples: models/efficientnet-b3/examples.md
-      - Terminating: models/efficientnet-b3/terminate.md
-  - Object Detection Mask R-CNN:
-      - Overview: models/img-obj-mask-r-cnn/index.md
-      - Launch Endpoint: models/img-obj-mask-r-cnn/launch-endpoint.md
-      - API: models/img-obj-mask-r-cnn/api.md
-      - Examples: models/img-obj-mask-r-cnn/examples.md
-      - Performance: models/img-obj-mask-r-cnn/performance.md
-      - Terminating: models/img-obj-mask-r-cnn/terminate.md
+      - Overview: model/efficientnet-b3/index.md
+      - Train an Algorithm in SageMaker: model/efficientnet-b3/train.md
+      - Launch Endpoint - Custom model: model/efficientnet-b3/train-endpoint.md
+      - Launch Endpoint - Base model: model/efficientnet-b3/base-endpoint.md
+      - API: model/efficientnet-b3/api.md
+      - Examples: model/efficientnet-b3/examples.md
+      - Terminating: model/efficientnet-b3/terminate.md
 
 theme:
   name: material
-  favicon: assets/img/favicon.png
-  logo: assets/img/logo.png
-  custom_dir: docs/theme
+  favicon: assets/images/favicon.png
+  logo: assets/images/logo.png
 
   features:
+    - content.code.annotate
+    - navigation.instant
     - navigation.tabs
-    - navigation.sections
-    - navigation.indexes
+    - navigation.tracking
 
   palette:
-    # Light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: red
-      accent: deep orange
-      toggle:
-        icon: material/toggle-switch-off-outline
-        name: Switch to dark mode
-
-    # Dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    - scheme: default
       primary: red
       accent: red
       toggle:
         icon: material/toggle-switch
+        name: Switch to dark mode
+    - scheme: slate
+      primary: red
+      accent: red
+      toggle:
+        icon: material/toggle-switch-off-outline
         name: Switch to light mode
 
 extra_css:
-  - assets/css/material-pygments.css
   - assets/css/custom.css
 
 extra_javascript:
   - assets/js/medium-zoom.min.js
   - assets/js/custom.js
 
-plugins:
-  - search
-
 markdown_extensions:
+  - attr_list
+  - md_in_html
   - admonition
   - pymdownx.details
   - pymdownx.superfences
-  - codehilite:
-      guess_lang: false
-  - attr_list
-  - meta
-  - pymdownx.tabbed
-  - pymdownx.snippets:
-      check_paths: true
-  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      auto_title: true
   - toc:
       permalink: true
 

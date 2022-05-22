@@ -43,7 +43,7 @@ In the `Create endpoint` page:
 
 A new endpoint will be created (this can take a couple of minutes).
 
-![SageMaker efficientnet-b3 endpoint](/assets/img/models/efficientnet-b3/sagemaker-endpoint.png)
+![SageMaker efficientnet-b3 endpoint](/assets/images/model/efficientnet-b3/sagemaker-endpoint.png)
 
 ## 3. Making a query
 
@@ -59,7 +59,7 @@ docs/models/snippets/info-how-to-query.md
 
 A simple example using `boto` and this photo as input:
 
-![Horses](/assets/img/models/efficientnet-b3/horses.jpg)
+![Horses](/assets/images/model/efficientnet-b3/horses.jpg)
 
 You can use the Python `boto3` library to make a query.
 

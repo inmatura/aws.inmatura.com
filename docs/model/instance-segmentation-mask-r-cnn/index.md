@@ -1,14 +1,17 @@
-# Object Detection Mask R-CNN model
+# Instance Segmentation Mask R-CNN
 
-The [Object Detection Mask R-CNN model](https://aws.amazon.com/marketplace/pp/prodview-dxs3ysuie4q5m)
-provides state of the art object detection on images with fast inference times.
+The [Instance Segmentation Mask R-CNN model](https://aws.amazon.com/marketplace/pp/prodview-dxs3ysuie4q5m)
+provides state of the art object detection and instance segmentation on images with fast inference times.
+
+![](/assets/images/model/instance-segmentation-mask-r-cnn/cars.segmented.jpg)
+
 
 [Launch on SageMaker](https://aws.amazon.com/marketplace/pp/prodview-dxs3ysuie4q5m).
 
 Features:
 
 - State of the art accuracy on the COCO 2017 dataset
-    - Box AP: `43.0`
+  - Box AP: `43.0`
 - Based on the [Mask R-CNN paper](https://arxiv.org/abs/1703.06870v3)
 - Network Architecture: ResNet + FPN (Feature Pyramid Network): [ResNeXt](https://github.com/facebookresearch/ResNeXt) - 101
 - Flexible endpoint to make inferences on images: Returns a segmented image in different formats or the metadata as JSON

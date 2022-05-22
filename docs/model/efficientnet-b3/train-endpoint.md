@@ -8,7 +8,7 @@ it's possible to create a SageMaker Endpoint to make inferences on new data.
 Under `Training` > `Training Jobs` select the target training job,
 click on `Actions` and then `Create Model Package`.
 
-![Create model package](/assets/img/models/efficientnet-b3/create-model-package.png)
+![Create model package](/assets/images/model/efficientnet-b3/create-model-package.png)
 
 In the `Create model package` page:
 
@@ -29,7 +29,7 @@ A new `Model Package` will be created.
 
 Select the `Model package`, click on `Action` and then on `Create endpoint`.
 
-![Create model package](/assets/img/models/efficientnet-b3/create-endpoint.png)
+![Create model package](/assets/images/model/efficientnet-b3/create-endpoint.png)
 
 
 In the `Create model and endpoint`:
@@ -69,10 +69,10 @@ docs/models/snippets/info-how-to-query.md
 As a quick example let's use these two images:
 
 === "Ant"
-    <img src="/assets/img/models/efficientnet-b3/ant1.jpg" width="300" />
+    <img src="/assets/images/model/efficientnet-b3/ant1.jpg" width="300" />
 
 === "Bee"
-    <img src="/assets/img/models/efficientnet-b3/bee1.jpg" width="300" />
+    <img src="/assets/images/model/efficientnet-b3/bee1.jpg" width="300" />
 
 Querying the endpoint:
 

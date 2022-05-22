@@ -10,6 +10,6 @@ You can use all the features from the RStudio IDE such as developing Shiny Apps.
 ??? info "Rstudio from the Jupyter Notebook Classic"
     Click on the `New` dropdown and then click on `RStudio`.
 
-![RStudio](/assets/img/jupyterhub-ami/rstudio-shiny.png)
+![RStudio](/assets/images/ami/jupyterhub/rstudio-shiny.png)
 
-![RStudio Shiny](/assets/img/jupyterhub-ami/rstudio-shiny.png)
+![RStudio Shiny](/assets/images/ami/jupyterhub/rstudio-shiny.png)

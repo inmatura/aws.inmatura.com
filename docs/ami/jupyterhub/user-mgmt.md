@@ -23,7 +23,7 @@ On the top right corner select the `Jupyterhub` realm.
 
     The default `jupyterhub-admin` user is located there.
 
-![JupyterHub KeyCloak](/assets/img/jupyterhub-ami/keycloak-realm.png)
+![JupyterHub KeyCloak](/assets/images/ami/jupyterhub/keycloak-realm.png)
 
 ## Adding a user
 
@@ -34,19 +34,19 @@ To add a new user:
 1. On the form type the username of the new user
 1. Click on `Save`
 
-![JupyterHub KeyCloak](/assets/img/jupyterhub-ami/keycloak-add-user.png)
+![JupyterHub KeyCloak](/assets/images/ami/jupyterhub/keycloak-add-user.png)
 
 You will be redirected to the new user page.
 To add a password click on the `Credentials` page and set a temp password.
 
-![JupyterHub KeyCloak](/assets/img/jupyterhub-ami/keycloak-user-page.png)
+![JupyterHub KeyCloak](/assets/images/ami/jupyterhub/keycloak-user-page.png)
 
-![JupyterHub KeyCloak](/assets/img/jupyterhub-ami/keycloak-user-temp-pass.png)
+![JupyterHub KeyCloak](/assets/images/ami/jupyterhub/keycloak-user-temp-pass.png)
 
 Now when the new user logs in with the temp password it will be prompted to
 select a new one.
 
-![JupyterHub KeyCloak](/assets/img/jupyterhub-ami/keycloak-update-pass.png)
+![JupyterHub KeyCloak](/assets/images/ami/jupyterhub/keycloak-update-pass.png)
 
 And after that, the new user will be automatically sent to it's Jupyter session.
 
@@ -62,6 +62,6 @@ please take a look at their [official documentation](https://www.keycloak.org/do
 
 Admin users are able to control users from the JupyterHub Admin Panel.
 
-![JupyterHub Admin](/assets/img/jupyterhub-ami/jupyterhub-admin.png)
+![JupyterHub Admin](/assets/images/ami/jupyterhub/jupyterhub-admin.png)
 
 The default the `jupyterhub-admin` is also an admin.

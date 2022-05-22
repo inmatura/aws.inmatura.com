@@ -37,7 +37,7 @@ In the `Create endpoint` page:
 
 A new endpoint will be created (this can take a couple of minutes):
 
-![SageMaker efficientnet-b3 endpoint](/assets/img/models/efficientnet-b3/sagemaker-endpoint.png)
+![SageMaker efficientnet-b3 endpoint](/assets/images/model/efficientnet-b3/sagemaker-endpoint.png)
 
 ## 3. Making a query
 
@@ -56,7 +56,7 @@ https://runtime.sagemaker.us-east-1.amazonaws.com/endpoints/img-obj-mask-r-cnn/i
 
 A simple example using `boto` and this photo as input:
 
-![Horses](/assets/img/models/img-obj-mask-r-cnn/horse-guard.jpg){width=600px}
+![Horses](/assets/images/model/img-obj-mask-r-cnn/horse-guard.jpg){width=600px}
 
 ```python
 import boto3
@@ -84,7 +84,7 @@ with open("validation/horse-guard.segmented.jpg", "wb") as f:
 
 Response:
 
-![Horses](/assets/img/models/img-obj-mask-r-cnn/horse-guard.segmented.jpg){width=600px}
+![Horses](/assets/images/model/img-obj-mask-r-cnn/horse-guard.segmented.jpg){width=600px}
 
 
 !!! info "Full API docs"

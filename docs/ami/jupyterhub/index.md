@@ -1,6 +1,6 @@
 # JupyterHub AMI
 
-![Jupyter Lab](/assets/img/jupyterhub-ami/jupyter-lab.png)
+![Jupyter Lab](/assets/images/ami/jupyterhub/jupyter-lab.png)
 
 [Launch this offering in AWS](https://aws.amazon.com/marketplace/pp/Daniel-Rodriguez-JupyterHub-multi-user-single-node/B07YSYZ2P6).
 

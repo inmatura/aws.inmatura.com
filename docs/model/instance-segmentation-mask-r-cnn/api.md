@@ -9,7 +9,7 @@ The reponse type can be controlled by the `Accept` or [`Custom Attributes` heade
 
 Example image `horse-guard.jpg`:
 
-![Horse Guard](/assets/img/models/img-obj-mask-r-cnn/horse-guard.jpg){width=300px}
+![Horse Guard](/assets/images/model/img-obj-mask-r-cnn/horse-guard.jpg){width=300px}
 
 === "Python (boto3) - JPEG"
 
@@ -43,7 +43,7 @@ Example image `horse-guard.jpg`:
         f.write(response["Body"].read())
     ```
 
-    ![Horses](/assets/img/models/img-obj-mask-r-cnn/horse-guard.segmented.jpg){width=600px}
+    ![Horses](/assets/images/model/img-obj-mask-r-cnn/horse-guard.segmented.jpg){width=600px}
 
 === "Python (boto3) - JSON"
 

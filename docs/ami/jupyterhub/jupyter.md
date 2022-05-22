@@ -4,7 +4,7 @@
 
 JupyterLab is the default IDE that will be shown to users after they log in.
 
-![Jupyter Lab](/assets/img/jupyterhub-ami/jupyter-lab.png)
+![Jupyter Lab](/assets/images/ami/jupyterhub/jupyter-lab.png)
 
 ### Extensions
 
@@ -22,7 +22,7 @@ To access it just change the URL path ending from `/lab` to `/tree`.
 
 For example: `http://<ip-address>/user/jupyterhub-admin/tree`
 
-![Jupyter Notebook Classic](/assets/img/jupyterhub-ami/jupyter-notebook.png)
+![Jupyter Notebook Classic](/assets/images/ami/jupyterhub/jupyter-notebook.png)
 
 !!! info "Kernels"
     All the existing Python and R kernels will also be available on Jupyter Notebook Classic.

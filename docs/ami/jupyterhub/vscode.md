@@ -13,4 +13,4 @@ Python out of the box and it's possible install other extensions.
 ??? info "VSCode from the Jupyter Notebook Classic"
     Click on the `New` dropdown and then click on `VS Code`.
 
-![VS Code](/assets/img/jupyterhub-ami/vscode.png)
+![VS Code](/assets/images/ami/jupyterhub/vscode.png)

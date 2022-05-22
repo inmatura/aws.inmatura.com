@@ -38,7 +38,7 @@ In he `Create endpoint` page:
 
 A new endpoint will be created (this can take a couple of minutes).
 
-![SageMaker GPT-2 endpoint](/assets/img/models/gpt-2/sagemaker-endpoint.png)
+![SageMaker GPT-2 endpoint](/assets/images/model/gpt-2/sagemaker-endpoint.png)
 
 ## 3. Making a query
 
@@ -60,7 +60,7 @@ that supports AWS Authentication.
 Create a new `POST` request and select the Auth method `AWS IAM v4`,
 fill the credentials, region and use `sagemaker` as the service.
 
-![Insonmia Auth](/assets/img/models/insonmia-aws-auth.png)
+![Insonmia Auth](/assets/images/model/insonmia-aws-auth.png)
 
 Select `JSON` as the body type and use the following test query:
 

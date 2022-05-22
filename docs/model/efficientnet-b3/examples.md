@@ -5,7 +5,7 @@ on the ImageNet dataset.
 
 === "hammer.jpg"
 
-    ![Hammer](/assets/img/models/efficientnet-b3/hammer.jpg)
+    ![Hammer](/assets/images/model/efficientnet-b3/hammer.jpg)
 
     ```
     [
@@ -19,7 +19,7 @@ on the ImageNet dataset.
 
 === "horses.jpg"
 
-    ![Horses](/assets/img/models/efficientnet-b3/horses.jpg)
+    ![Horses](/assets/images/model/efficientnet-b3/horses.jpg)
 
     ```
     [
@@ -33,7 +33,7 @@ on the ImageNet dataset.
 
 === "koala.jpg"
 
-    ![Koala](/assets/img/models/efficientnet-b3/koala.jpg)
+    ![Koala](/assets/images/model/efficientnet-b3/koala.jpg)
 
     ```
     [
@@ -47,7 +47,7 @@ on the ImageNet dataset.
 
 === "mic.jpg"
 
-    ![Mic](/assets/img/models/efficientnet-b3/mic.jpg)
+    ![Mic](/assets/images/model/efficientnet-b3/mic.jpg)
 
     ```
     [
@@ -61,7 +61,7 @@ on the ImageNet dataset.
 
 === "panda.jpg"
 
-    ![panda](/assets/img/models/efficientnet-b3/panda.jpg)
+    ![panda](/assets/images/model/efficientnet-b3/panda.jpg)
 
     ```
     [
@@ -75,7 +75,7 @@ on the ImageNet dataset.
 
 === "traffic-light.jpg"
 
-    ![traffic-light](/assets/img/models/efficientnet-b3/traffic-light.jpg)
+    ![traffic-light](/assets/images/model/efficientnet-b3/traffic-light.jpg)
 
     ```
     [
@@ -89,7 +89,7 @@ on the ImageNet dataset.
 
 === "tv.png"
 
-    ![traffic-light](/assets/img/models/efficientnet-b3/tv.png)
+    ![traffic-light](/assets/images/model/efficientnet-b3/tv.png)
 
     ```
     [
