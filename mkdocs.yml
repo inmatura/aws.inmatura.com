@@ -1,7 +1,9 @@
 site_name: Extrapolations Docs
 site_url: https://docs.extrapolations.dev
-copyright: Copyright 2019 - 2022 Daniel Rodriguez
-
+site_author: Daniel Rodriguez
+site_description: >-
+  Documentation for Extrapolations.dev AWS offerings
+copyright: Copyright &copy; 2019 - 2023 Daniel Rodriguez
 nav:
   - Home: index.md
   - JupyterHub AMI:
@@ -41,36 +43,30 @@ theme:
   logo: assets/images/logo.png
 
   features:
-    - content.code.annotate
     - navigation.instant
-    - navigation.tabs
     - navigation.tracking
-
+    - navigation.tabs
+    - content.code.copy
+    - content.code.annotate
   palette:
     - scheme: default
-      primary: red
-      accent: red
+      primary: deep orange
+      accent: deep orange
       toggle:
-        icon: material/toggle-switch
+        icon: material/weather-night
         name: Switch to dark mode
+    # Palette toggle for dark mode
     - scheme: slate
-      primary: red
-      accent: red
+      primary: deep orange
+      accent: deep orange
       toggle:
-        icon: material/toggle-switch-off-outline
+        icon: material/weather-sunny
         name: Switch to light mode
 
-extra_css:
-  - assets/css/custom.css
-
-extra_javascript:
-  - assets/js/medium-zoom.min.js
-  - assets/js/custom.js
-
 markdown_extensions:
+  - admonition
   - attr_list
   - md_in_html
-  - admonition
   - pymdownx.details
   - pymdownx.inlinehilite
   - pymdownx.snippets
@@ -82,6 +78,13 @@ markdown_extensions:
       alternate_style: true
   - toc:
       permalink: true
+
+extra_css:
+  - assets/css/custom.css
+
+extra_javascript:
+  - assets/js/medium-zoom.min.js
+  - assets/js/custom.js
 
 extra:
   generator: false

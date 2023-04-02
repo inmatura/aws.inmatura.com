@@ -7,39 +7,62 @@ on:
   workflow_dispatch:
 
 jobs:
-  docs:
-    runs-on: ubuntu-20.04
+  deploy:
+    name: deploy
 
-    defaults:
-      run:
-        shell: bash -l {0}
+    permissions:
+      contents: read
+      id-token: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.11]
+
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: arduino/setup-task@v1
 
-      - name: Install Task
-        uses: arduino/setup-task@v1
+      # ------------------------------------------------------------------------
 
-      - name: Install Conda environment with Micromamba
-        uses: mamba-org/provision-with-micromamba@main
+      - name: Python - Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
         with:
-          cache-env: true
+          python-version: ${{ matrix.python-version }}
 
-      - name: Print Python versions
+      - uses: actions/cache@v3
+        id: cached-python-env
+        with:
+          path: ${{ env.pythonLocation }}
+          key: >
+            python
+            ${{ runner.os }}
+            python-${{ matrix.python-version }}
+            ${{ hashFiles('requirements.txt') }}
+
+      - name: Install dependencies
+        if: steps.cached-python-env.outputs.cache-hit != 'true'
         run: |
-          which micromamba
-          micromamba info
+          pip install -r requirements.txt
+
+      - name: Python - Print Python info
+        run: |
           which python
           python --version
           which pip
           pip --version
+          pip freeze
+
+      # ------------------------------------------------------------------------
 
       - name: Build docs
         run: |
-          task docs
+          task build
 
       # ------------------------------------------------------------------------
-      # Upload to Netlify
+      # Publish
 
       - name: Preview - Upload to Netlify
         if: github.event_name == 'pull_request'

@@ -1,10 +1,14 @@
 version: "3"
 
 tasks:
+  build:
+    cmds:
+      - mkdocs build
+
+  lockfiles:
+    cmds:
+      - pip-compile -q --resolver=backtracking -o requirements.txt pyproject.toml
+
   serve:
     cmds:
       - mkdocs serve
-
-  docs:
-    cmds:
-      - mkdocs build

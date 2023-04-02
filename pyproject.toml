@@ -1,0 +1,22 @@
+[project]
+name = "extrapolations-dev"
+version = "1.0.0"
+description = ''
+authors = [{ name = 'Daniel Rodriguez', email = 'daniel@danielfrg.com' }]
+license = 'Apache-2.0'
+requires-python = '>=3.8'
+dependencies = ['mkdocs', 'mkdocs-material', 'mkdocs-jupyter']
+
+[tool.hatch.envs.default]
+dependencies = [
+  # Linting
+  "black",
+  "flake8",
+  "isort",
+  "pip-tools",
+  "ruff",
+]
+
+[build-system]
+requires = ['hatchling', 'hatch-fancy-pypi-readme>=22.5.0']
+build-backend = 'hatchling.build'
