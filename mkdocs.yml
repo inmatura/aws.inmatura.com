@@ -49,19 +49,19 @@ theme:
     - content.code.copy
     - content.code.annotate
   palette:
-    - scheme: default
-      primary: deep orange
-      accent: deep orange
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-    # Palette toggle for dark mode
     - scheme: slate
       primary: deep orange
       accent: deep orange
       toggle:
-        icon: material/weather-sunny
         name: Switch to light mode
+        icon: material/brightness-7
+    # Palette toggle for dark mode
+    - scheme: default
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        name: Switch to dark mode
+        icon: material/brightness-3
 
 markdown_extensions:
   - admonition
