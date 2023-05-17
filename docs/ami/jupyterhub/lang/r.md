@@ -7,8 +7,8 @@ data science packages installed out of the box.
 
 | Version   | Location       |
 | --------- | -------------- |
-| `R 4.1.2` | `/opt/R/4.1.2` |
-| `R 4.0.3` | `/opt/R/4.0.3` |
+| `R 4.3.0` | `/opt/R/4.3.0` |
+| `R 4.2.3` | `/opt/R/4.2.3` |
 | `R 3.6.3` | `/opt/R/3.6.3` |
 
 !!! info "Owner"
