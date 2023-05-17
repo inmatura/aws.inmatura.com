@@ -1,6 +1,6 @@
-# Extrapolations docs
+# Inmatura AWS docs
 
-Welcome to the Extrapolations documentation.
+Welcome to the Inmatura AWS documentation.
 
 Here you will find documentation for the various products offered in the
 [AWS Marketplace](https://aws.amazon.com/marketplace/seller-profile?id=3c135e65-8c99-4e4f-ace1-43eb02759156&ref=dtl_B07YSYZ2P6).

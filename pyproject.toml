@@ -1,5 +1,5 @@
 [project]
-name = "extrapolations-dev"
+name = "aws-inmatura-com"
 version = "1.0.0"
 description = ''
 authors = [{ name = 'Daniel Rodriguez', email = 'daniel@danielfrg.com' }]

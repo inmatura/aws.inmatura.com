@@ -1,8 +1,8 @@
-site_name: Extrapolations Docs
-site_url: https://docs.extrapolations.dev
+site_name: Inmatura AWS Docs
+site_url: https://aws.inmatura.com
 site_author: Inmatura LLC
 site_description: >-
-  Documentation for Extrapolations.dev AWS offerings
+  Documentation for Inmatura AWS offerings
 copyright: Copyright &copy; 2019 - 2023 Inmatura LLC
 nav:
   - Home: index.md
