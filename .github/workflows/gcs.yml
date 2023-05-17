@@ -11,7 +11,7 @@ on:
         required: true
       GCP_WORKLOAD_IDENTITY_PROVIDER:
         required: true
-      GCP_BUCKET:
+      GCP_BUCKET_PROD:
         required: true
 
 jobs:
