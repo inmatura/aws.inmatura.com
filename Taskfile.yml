@@ -3,7 +3,7 @@ version: "3"
 tasks:
   build:
     cmds:
-      - mkdocs build
+      - mkdocs build -d dist
 
   lockfiles:
     cmds:
