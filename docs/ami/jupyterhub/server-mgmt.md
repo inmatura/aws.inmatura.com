@@ -19,4 +19,4 @@ This includes the `jupyterhub_config.py` that can be used to control the behavio
 JupyterHub.
 
 Configuration for the Jupyter sessions can be set globally on the
-`/etc/jupyter` directory for example for [Voila config](/jupyterhub-ami/voila/#configure-theme).
+`/etc/jupyter` directory for example for [Voila config](/ami/jupyterhub/voila/#configure-theme).

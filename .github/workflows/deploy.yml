@@ -6,13 +6,17 @@ on:
   pull_request:
   workflow_dispatch:
 
-jobs:
-  deploy:
-    name: deploy
+concurrency:
+  group: deploy-${{ github.head_ref }}
+  cancel-in-progress: true
 
-    permissions:
-      contents: read
-      id-token: write
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  build:
+    name: build
 
     strategy:
       fail-fast: false

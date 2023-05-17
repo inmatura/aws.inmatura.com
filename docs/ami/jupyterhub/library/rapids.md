@@ -1,9 +1,9 @@
 # RAPIDS
 
-An independent conda environment called `Python 3.8 - RAPIDS` is installed to use
+An independent conda environment named `Python 3.10 - RAPIDS` is installed to use
 with the libraries from the RAPIDS ecosystem.
 
-```python title="Python 3.8 - RAPIDS"
+```python title="Python 3.10 - RAPIDS"
 import cudf
 import cuml
 
@@ -12,6 +12,6 @@ print(cuml.__version__)
 ```
 
 ```plain title="Output"
-21.10.01
-21.10.00
+23.04.01
+23.04.01
 ```

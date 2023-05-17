@@ -17,36 +17,35 @@ Then click on `Administration Console` and login into the admin UI:
 
 On the top right corner select the `Jupyterhub` realm.
 
-!!! note "Jupyterhub realm"
-
-    For a user to be able to login into JupyterHub it must belong to the `jupyterhub` realm.
-
-    The default `jupyterhub-admin` user is located there.
-
-![JupyterHub KeyCloak](/assets/images/ami/jupyterhub/keycloak-realm.png)
-
 ## Adding a user
+
+For a user to be able to login into JupyterHub it must belong to the `jupyterhub` realm.
+
+- The default `jupyterhub-admin` user is located there.
+- You can change `realms` on the top left corner of the admin UI.
+
+![JupyterHub KeyCloak](/assets/images/ami/jupyterhub/keycloak-select-realm.jpg)
 
 To add a new user:
 
 1. User click on the `Users` button on the left navigation under the `Manage` section.
-1. Click on the `Add user` button on the right side of the table.
-1. On the form type the username of the new user
-1. Click on `Save`
+2. Click on the `Add user` button on the right side of the table.
+3. On the form type the username of the new user
+4. Set a required action of `Update Password`
+5. Click on `Create`
 
-![JupyterHub KeyCloak](/assets/images/ami/jupyterhub/keycloak-add-user.png)
+![JupyterHub KeyCloak](/assets/images/ami/jupyterhub/keycloak-add-user.jpg)
 
 You will be redirected to the new user page.
-To add a password click on the `Credentials` page and set a temp password.
+Add a temporal password click on the `Credentials` tab and set a temp password.
 
-![JupyterHub KeyCloak](/assets/images/ami/jupyterhub/keycloak-user-page.png)
+![JupyterHub KeyCloak](/assets/images/ami/jupyterhub/keycloak-user-set-pass.jpg)
 
-![JupyterHub KeyCloak](/assets/images/ami/jupyterhub/keycloak-user-temp-pass.png)
 
 Now when the new user logs in with the temp password it will be prompted to
-select a new one.
+create a new one.
 
-![JupyterHub KeyCloak](/assets/images/ami/jupyterhub/keycloak-update-pass.png)
+![JupyterHub KeyCloak](/assets/images/ami/jupyterhub/keycloak-update-pass.jpg)
 
 And after that, the new user will be automatically sent to it's Jupyter session.
 
@@ -58,10 +57,10 @@ authentication systems such as AD/LDAP and more.
 To take advantage of other functionality of KeyCloak
 please take a look at their [official documentation](https://www.keycloak.org/documentation).
 
-## JupyterHub Admin
+## JupyterHub Users
 
 Admin users are able to control users from the JupyterHub Admin Panel.
 
-![JupyterHub Admin](/assets/images/ami/jupyterhub/jupyterhub-admin.png)
+![JupyterHub Admin](/assets/images/ami/jupyterhub/jupyterhub-admin.jpg)
 
-The default the `jupyterhub-admin` is also an admin.
+The default the `jupyterhub-admin` is an admin on JupyterHub.

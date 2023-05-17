@@ -25,8 +25,8 @@ Dashboard: /user/jupyterhub-admin/proxy/8787/status
 
 Paste this URL at the top of the Dask extension.
 
-![Dask](/assets/images/ami/jupyterhub/dask-ext-url.png)
+![Dask](/assets/images/ami/jupyterhub/dask-ext-url.jpg)
 
 After that click on any of the metrics to create new Panes in Jupyter Lab.
 
-![Dask](/assets/images/ami/jupyterhub/dask-jupyterlab.png)
+![Dask](/assets/images/ami/jupyterhub/dask-jupyterlab.jpg)

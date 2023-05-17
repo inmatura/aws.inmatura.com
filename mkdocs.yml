@@ -1,34 +1,34 @@
 site_name: Extrapolations Docs
 site_url: https://docs.extrapolations.dev
-site_author: Daniel Rodriguez
+site_author: Inmatura LLC
 site_description: >-
   Documentation for Extrapolations.dev AWS offerings
-copyright: Copyright &copy; 2019 - 2023 Daniel Rodriguez
+copyright: Copyright &copy; 2019 - 2023 Inmatura LLC
 nav:
   - Home: index.md
   - JupyterHub AMI:
       - Overview: ami/jupyterhub/index.md
       - Launch in EC2: ami/jupyterhub/launch-ec2.md
       - User management: ami/jupyterhub/user-mgmt.md
-      - Server Management: ami/jupyterhub/management.md
-      - Custom DNS: ami/jupyterhub/dns.md
-      - SSL: ami/jupyterhub/ssl.md
+      - Server Management: ami/jupyterhub/server-mgmt.md
+      - Custom Domain: ami/jupyterhub/custom-domain.md
+      - HTTPS: ami/jupyterhub/https.md
       - Support: ami/jupyterhub/support.md
       - Terminating: ami/jupyterhub/terminate.md
       - IDEs:
-          - Jupyter: ami/jupyterhub/jupyter.md
-          - RStudio: ami/jupyterhub/rstudio.md
-          - VS Code: ami/jupyterhub/vscode.md
+          - Jupyter: ami/jupyterhub/ide/jupyter.md
+          - RStudio: ami/jupyterhub/ide/rstudio.md
+          - VS Code: ami/jupyterhub/ide/vscode.md
       - Languages:
-          - Python: ami/jupyterhub/python.md
-          - R: ami/jupyterhub/r.md
+          - Python: ami/jupyterhub/lang/python.md
+          - R: ami/jupyterhub/lang/r.md
       - Libraries:
-          - Tensorflow/PyTorch: ami/jupyterhub/tf-th.md
-          - RAPIDS: ami/jupyterhub/rapids.md
-          - GPU: ami/jupyterhub/gpu.md
-          - Dask: ami/jupyterhub/dask.md
-          - Voila: ami/jupyterhub/voila.md
-          - Other versions: ami/jupyterhub/versions.md
+          - PyTorch and Tensorflow: ami/jupyterhub/library/pytorch-and-tf.md
+          - RAPIDS: ami/jupyterhub/library/rapids.md
+          - GPU: ami/jupyterhub/library/gpu.md
+          - Dask: ami/jupyterhub/library/dask.md
+          - Voila: ami/jupyterhub/library/voila.md
+          - Versions: ami/jupyterhub/library/versions.md
   - Instance Segmentation Mask R-CNN:
       - Overview: model/instance-segmentation-mask-r-cnn/index.md
       - Launch Model Endpoint: model/instance-segmentation-mask-r-cnn/launch-endpoint.md
