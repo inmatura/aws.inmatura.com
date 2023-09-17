@@ -4,6 +4,8 @@ site_author: Inmatura LLC
 site_description: >-
   Documentation for Inmatura AWS offerings
 copyright: Copyright &copy; 2019 - 2023 Inmatura LLC
+site_dir: dist
+
 nav:
   - Home: index.md
   - JupyterHub AMI:

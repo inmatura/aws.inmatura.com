@@ -13,13 +13,12 @@ concurrency:
 permissions:
   contents: read
   id-token: write
+  pull-requests: write
+  checks: write
 
 jobs:
   build:
-    name: build
-
     strategy:
-      fail-fast: false
       matrix:
         python-version: [3.11]
 
@@ -63,30 +62,22 @@ jobs:
         run: |
           task build
 
-      - name: C!ache dist
-        id: cache-dist
+      - name: Cache website
+        id: cache-build
         uses: actions/cache@v3
         with:
           path: dist
           key: >
-            dist
+            website
             ${{ github.run_id }}
             ${{ github.run_attempt }}
 
-  gcs:
-    uses: ./.github/workflows/gcs.yml
+  firebase:
+    uses: ./.github/workflows/deploy-firebase.yml
     needs: [build]
     secrets: inherit
 
   post-deploy:
-    needs: [gcs]
-    runs-on: ubuntu-latest
-
-    if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'prod')
-
-    steps:
-      - name: Purge Cloudflare Cache
-        uses: jakejarvis/cloudflare-purge-action@v0.3.0
-        env:
-          CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_ZONE }}
-          CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
+    uses: ./.github/workflows/deploy-cloudflare.yml
+    needs: [firebase]
+    secrets: inherit
