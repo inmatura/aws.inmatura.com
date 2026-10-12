@@ -1,0 +1,9 @@
+name = "aws-inmatura-com"
+account_id = "a8fd9607730d4decf0638edb41271e21"
+compatibility_date = "2026-10-11"
+workers_dev = true
+preview_urls = true
+previews = {}
+
+[assets]
+directory = "./dist"

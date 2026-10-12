@@ -1,0 +1,54 @@
+name: deploy-cf-workers
+
+on:
+  workflow_call:
+    secrets:
+      CLOUDFLARE_ACCOUNT_ID:
+        required: true
+      CLOUDFLARE_TOKEN:
+        required: true
+
+jobs:
+  deploy:
+    permissions:
+      contents: read
+      deployments: write
+      pull-requests: write
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore built website
+        uses: actions/cache@v4
+        with:
+          path: dist
+          key: >
+            website
+            ${{ github.run_id }}
+            ${{ github.run_attempt }}
+          fail-on-cache-miss: true
+
+      - name: Publish to Cloudflare Workers
+        id: cloudflare-workers-deploy
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: "4.149.0"
+          command: ${{ github.event_name == 'pull_request' && format('preview --name pr-{0}', github.event.pull_request.number) || 'deploy' }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comment deploy URL
+        if: github.event_name == 'pull_request'
+        uses: mshick/add-pr-comment@v2
+        with:
+          message-id: cloudflare-deploy
+          message: |
+            ### Cloudflare Workers preview
+            | Name | Link |
+            |------|------|
+            | Preview | ${{ steps.cloudflare-workers-deploy.outputs.deployment-url }} |
+            | Deploy log | ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} |
+            | Commit | ${{ github.sha }} |
