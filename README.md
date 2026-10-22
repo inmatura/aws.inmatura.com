@@ -1,5 +1,14 @@
 # aws.inmatura.com
 
-[![build](https://github.com/inmatura/aws.inmatura.com/actions/workflows/deploy.yml/badge.svg)](https://github.com/inmatura/aws.inmatura.com/actions/workflows/deploy.yml)
+Documentation for Inmatura's AWS Marketplace products.
 
-Source for [aws.inmatura.com](https://aws.inmatura.com).
+## Development
+
+```zsh
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+mkdocs serve
+```
+
+Open [localhost:8000](http://localhost:8000).
