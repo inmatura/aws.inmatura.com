@@ -5,12 +5,12 @@ MkDocs Material. The README and `justfile` own setup and usage.
 
 ## Conventions
 
-- Use Python 3.11 to match CI and install dependencies from `requirements.txt`.
+- Python 3.13 (pinned in CI), dependencies managed with uv (`pyproject.toml`, `uv.lock`).
 - Write content in `docs/`; update `mkdocs.yml` when changing navigation.
   Custom styles and scripts live in `docs/assets/`.
 - Keep documentation concise and preserve product links, support information,
   code examples, and existing page paths.
-- Run `mkdocs build -d dist` (or `just build`) after documentation changes.
+- Run `just build` (`uv run mkdocs build -d dist`) after documentation changes.
 
 ## Deployment
 

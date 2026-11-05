@@ -2,10 +2,7 @@ default:
   just --list
 
 build:
-  mkdocs build -d dist
-
-lockfiles:
-  pip-compile -q --resolver=backtracking -o requirements.txt pyproject.toml
+  uv run mkdocs build -d dist
 
 serve:
-  mkdocs serve
+  uv run mkdocs serve

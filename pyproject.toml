@@ -1,22 +1,14 @@
 [project]
 name = "aws-inmatura-com"
 version = "1.0.0"
-description = ''
-authors = [{ name = 'Daniel Rodriguez', email = 'daniel@danielfrg.com' }]
-license = 'Apache-2.0'
-requires-python = '>=3.8'
-dependencies = ['mkdocs', 'mkdocs-material', 'mkdocs-jupyter']
+description = "Documentation for Inmatura's AWS Marketplace products"
+authors = [{ name = "Daniel Rodriguez", email = "daniel@danielfrg.com" }]
+license = "Apache-2.0"
+requires-python = ">=3.13"
+dependencies = ["mkdocs==1.4.2", "mkdocs-material==9.1.5", "mkdocs-jupyter==0.24.1"]
 
-[tool.hatch.envs.default]
-dependencies = [
-  # Linting
-  "black",
-  "flake8",
-  "isort",
-  "pip-tools",
-  "ruff",
-]
+[dependency-groups]
+dev = ["ruff>=0.17.3", "ty>=0.0.97"]
 
-[build-system]
-requires = ['hatchling', 'hatch-fancy-pypi-readme>=22.5.0']
-build-backend = 'hatchling.build'
+[tool.uv]
+package = false
